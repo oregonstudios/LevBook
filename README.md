@@ -8,37 +8,20 @@ esperamos estar de acordo com suas espectativas ou superar as mesmas...
 Aqui estão as principais ferramentas que utilizo no meu fluxo de trabalho de desenvolvimento. Cada ferramenta inclui seu nome e logotipo correspondente. Essas ferramentas me ajudam a criar projetos incríveis de forma eficiente e colaborativa.
 
 ## Tecnologias
+https://img.shields.io/badge/HTML-239120?style=for-the-badge&logo=html5&logoColor=white
+https://img.shields.io/badge/CSS-239120?&style=for-the-badge&logo=css3&logoColor=white
+https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black
+https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white
 
-### HTML
-![HTML Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/html5.svg)
-
-### CSS
-![CSS Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/css3.svg)
-
-### JavaScript
-![JavaScript Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/javascript.svg)
-
-### React
-![React Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/react.svg)
-
-### Firebase
-![Firebase Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/firebase.svg)
-
-### Bootstrap
-![Bootstrap Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/bootstrap.svg)
 
 ## Ferramentas
-
-### VS Code
-![VS Code Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/vscode.svg)
-
-### GitHub
-![GitHub Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/github.svg)
-
-### ClickUp
-![ClickUp Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/clickup.svg)
-
-### Figma
-![Figma Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/figma.svg)
+https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white
+https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white
+https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white
+https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white
 
 
+
+#Gráfico
+https://github-readme-stats.vercel.app/api/top-langs/?username={username}&theme=blue-green
