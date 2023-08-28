@@ -3,9 +3,9 @@ Este é o Leve book seu site perfeito para compra , venda e troca de livros!
 pensando numa forma de melhorar e facilitar a vida de leitores montamos este projeto para atender tal demanda , nele você poderá comprar vender e trocar livros podendo assim explorar novos ares , conhecendo novos mundos de forma simples e até mesmo divertida,
 esperamos estar de acordo com suas espectativas ou superar as mesmas...
 
-# Minhas Ferramentas de Desenvolvimento
+# Ferramentas de Desenvolvimento
 
-Este repositório lista as ferramentas que uso no meu desenvolvimento de projetos. Cada ferramenta inclui seu nome e logotipo.
+Aqui estão as principais ferramentas que utilizo no meu fluxo de trabalho de desenvolvimento. Cada ferramenta inclui seu nome e logotipo correspondente. Essas ferramentas me ajudam a criar projetos incríveis de forma eficiente e colaborativa.
 
 ## Tecnologias
 
@@ -40,4 +40,5 @@ Este repositório lista as ferramentas que uso no meu desenvolvimento de projeto
 
 ### Figma
 ![Figma Logo](https://cdn.jsdelivr.net/npm/simple-icons@5.15.3/icons/figma.svg)
+
 
