@@ -3,10 +3,6 @@ Este é o Leve book seu site perfeito para compra , venda e troca de livros!
 pensando numa forma de melhorar e facilitar a vida de leitores montamos este projeto para atender tal demanda , nele você poderá comprar vender e trocar livros podendo assim explorar novos ares , conhecendo novos mundos de forma simples e até mesmo divertida,
 esperamos estar de acordo com suas espectativas ou superar as mesmas...
 
-# Ferramentas de Desenvolvimento
-
-Aqui estão as principais ferramentas que utilizo no meu fluxo de trabalho de desenvolvimento. Cada ferramenta inclui seu nome e logotipo correspondente. Essas ferramentas me ajudam a criar projetos incríveis de forma eficiente e colaborativa.
-
 ## Tecnologias
 
 <div style="display: inline_block">
@@ -17,8 +13,6 @@ Aqui estão as principais ferramentas que utilizo no meu fluxo de trabalho de de
   <img align="center" alt="React" src="https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB" />
   <img align="center" alt="Bootstrap" src="https://img.shields.io/badge/Bootstrap-563D7C?style=for-the-badge&logo=bootstrap&logoColor=white" />
 </div><br/>
-
-
 
 ## Ferramentas
 <div style="display: inline_block">
