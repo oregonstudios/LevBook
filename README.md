@@ -29,7 +29,5 @@ Aqui estão as principais ferramentas que utilizo no meu fluxo de trabalho de de
 </div><br/>
 
 
-
-
 #Gráfico
-https://github-readme-stats.vercel.app/api/top-langs/?username={username}&theme=blue-green
+
