@@ -36,5 +36,3 @@ Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma
 </div><br/>
 
 
-#Gráfico
-
