@@ -15,6 +15,13 @@ Aqui no LeveBook, acreditamos que os livros têm o poder de nos transportar para
 
 Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma comunidade que respira literatura. O futuro da compra, venda e troca de livros está aqui, no LeveBook. Junte-se a nós e leve a magia das palavras para o próximo nível!
 
+<div style="display: inline_block"><br>
+<a href="https://github.com/oregonstudios"> 
+  <img height="160em" src="https://github-readme-stats-eight-theta.vercel.app/api?username=oregonstudiosj&show_icons=true&theme=dark&include_all_commits=true&count_private=true"/>
+  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=oregonstudios&layout=compact&langs_count=16&theme=dark"/>
+</a>
+
+
 ## Tecnologias
 
 <div style="display: inline_block">
@@ -34,5 +41,3 @@ Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma
   <img align="center" alt="whatsapp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   <img align="center" alt="clickup" src="https://img.shields.io/badge/clickup-%237B68EE.svg?&style=for-the-badge&logo=clickup&logoColor=white" />
 </div><br/>
-
-
