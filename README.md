@@ -19,6 +19,12 @@ Aqui no LeveBook, acreditamos que os livros têm o poder de nos transportar para
 
 Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma comunidade que respira literatura. O futuro da compra, venda e troca de livros está aqui, no LeveBook. Junte-se a nós e leve a magia das palavras para o próximo nível!
 
+<div align="center">
+  <a href="https://github.com/murilobispo">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=murilobispo&show_icons=true&theme=codeSTACKr&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=murilobispo&layout=compact&langs_count=7&theme=codeSTACKr"/>
+</div>
+
 
 ## Tecnologias
 
