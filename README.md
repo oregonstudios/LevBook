@@ -1,7 +1,7 @@
 # Projeto Leve Book
 O LeveBook é mais do que um simples site de compra e venda de livros; é um destino virtual onde amantes da leitura se reúnem para explorar, trocar e descobrir tesouros literários. Imagine um lugar onde as histórias ganham vida, e cada página vira uma oportunidade para se conectar com outros leitores apaixonados. Bem-vindo a uma nova era de compartilhamento de conhecimento e aventuras literárias!
 
-O Que Nos Torna Únicos:
+###O Que Nos Torna Únicos:
 
 Catálogo Diversificado: No LeveBook, você encontrará uma ampla variedade de títulos, desde clássicos atemporais até os lançamentos mais quentes. Nossas estantes virtuais são repletas de opções para todos os gostos e idades.
 Comércio Simpificado: Comprar e vender livros nunca foi tão fácil. Conectamos compradores e vendedores de maneira intuitiva e segura, garantindo que os livros encontrem novos lares com facilidade.
@@ -14,7 +14,28 @@ Junte-se à Comunidade LeveBook:
 Aqui no LeveBook, acreditamos que os livros têm o poder de nos transportar para outros mundos e ampliar nossos horizontes. Nossa missão é proporcionar a você um espaço onde essas jornadas literárias possam ser compartilhadas e celebradas. Se você é um devorador de livros, um colecionador de edições raras ou um iniciante curioso, o LeveBook é o lugar onde você pertence.
 
 Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma comunidade que respira literatura. O futuro da compra, venda e troca de livros está aqui, no LeveBook. Junte-se a nós e leve a magia das palavras para o próximo nível!
-
+---
+<div align="center">
+  <a href="https://github.com/oregonstudios/LevBook">
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=oregonstudios/LevBook&show_icons=true&theme=codeSTACKr&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=oregonstudios/LevBook&layout=compact&langs_count=7&theme=codeSTACKr"/>
+</div>
+ 
+  
+<div align="center" style="display: inline_block"><br>
+  <img align="center" alt="Murilo-Js"        height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-plain.svg">
+  <img align="center" alt="Murilo-React"     height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg">
+  <img align="center" alt="Murilo-Html"      height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg">
+  <img align="center" alt="Murilo-Css"       height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg">
+  <img align="center" alt="Murilo-Node"      height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg">
+  <img align="center" alt="Murilo-Python"    height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg">
+  <!--
+  <img align="center" alt="Murilo-Photoshop" height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/photoshop/photoshop-line.svg">
+  <img align="center" alt="Muilo-Kotlin"     height="30" width="40" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kotlin/kotlin-original.svg">
+  <img align="center" alt="" height="30" width="40" src="">
+  <img align="center" alt="" height="30" width="40" src="">
+  -->
+</div>
 
 ## Tecnologias
 
