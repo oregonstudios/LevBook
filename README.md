@@ -4,7 +4,7 @@ O LeveBook é mais do que um simples site de compra e venda de livros; é um des
 ###O Que Nos Torna Únicos:
 
 Catálogo Diversificado: No LeveBook, você encontrará uma ampla variedade de títulos, desde clássicos atemporais até os lançamentos mais quentes. Nossas estantes virtuais são repletas de opções para todos os gostos e idades.
-<br>
+</br>
 Comércio Simpificado: Comprar e vender livros nunca foi tão fácil. Conectamos compradores e vendedores de maneira intuitiva e segura, garantindo que os livros encontrem novos lares com facilidade.
 <br>
 Trocas Empolgantes: Quer experimentar algo novo sem gastar muito? Nossa plataforma de trocas permite que você troque seus livros com outros leitores, expandindo sua coleção sem esvaziar sua carteira.
