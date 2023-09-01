@@ -18,7 +18,7 @@ Junte-se à Comunidade LeveBook:
 Aqui no LeveBook, acreditamos que os livros têm o poder de nos transportar para outros mundos e ampliar nossos horizontes. Nossa missão é proporcionar a você um espaço onde essas jornadas literárias possam ser compartilhadas e celebradas. Se você é um devorador de livros, um colecionador de edições raras ou um iniciante curioso, o LeveBook é o lugar onde você pertence.
 
 Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma comunidade que respira literatura. O futuro da compra, venda e troca de livros está aqui, no LeveBook. Junte-se a nós e leve a magia das palavras para o próximo nível!
----
+
 
 ## Tecnologias
 
