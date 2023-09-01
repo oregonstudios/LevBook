@@ -1,7 +1,7 @@
 # Projeto Leve Book
 O LeveBook é mais do que um simples site de compra e venda de livros; é um destino virtual onde amantes da leitura se reúnem para explorar, trocar e descobrir tesouros literários. Imagine um lugar onde as histórias ganham vida, e cada página vira uma oportunidade para se conectar com outros leitores apaixonados. Bem-vindo a uma nova era de compartilhamento de conhecimento e aventuras literárias!
 
-###O Que Nos Torna Únicos:
+### O Que Nos Torna Únicos:
 
 Catálogo Diversificado: No LeveBook, você encontrará uma ampla variedade de títulos, desde clássicos atemporais até os lançamentos mais quentes. Nossas estantes virtuais são repletas de opções para todos os gostos e idades.
 
