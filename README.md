@@ -23,8 +23,8 @@ Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma
 
 <div align="center">
   <a href="https://github.com/oregonstudios/LevBook">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=murilobispo&show_icons=true&theme=codeSTACKr&include_all_commits=true&count_private=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=murilobispo&layout=compact&langs_count=7&theme=codeSTACKr"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=moregonstudios&show_icons=true&theme=codeSTACKr&include_all_commits=true&count_private=true"/>
+  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=oregonstudios&layout=compact&langs_count=7&theme=codeSTACKr"/>
 </div>
 
 
