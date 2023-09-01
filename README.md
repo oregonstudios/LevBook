@@ -20,7 +20,7 @@ Aqui no LeveBook, acreditamos que os livros têm o poder de nos transportar para
 Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma comunidade que respira literatura. O futuro da compra, venda e troca de livros está aqui, no LeveBook. Junte-se a nós e leve a magia das palavras para o próximo nível!
 
 ### Gráfico das tecnologias
-
+![Anurag's GitHub stats](https://github-readme-stats.vercel.app/api?username=anuraghazra&show=reviews,discussions_started,discussions_answered,prs_merged,prs_merged_percentage)
 
 ## Tecnologias
 
