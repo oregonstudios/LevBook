@@ -21,12 +21,6 @@ Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma
 
 ### Gráfico das tecnologias
 
-<div align="center">
-  <a href="https://github.com/oregonstudios">
-  <img height="180em" src="https://github-readme-stats.vercel.app/api?username=oregonstudios&show_icons=true&theme=codeSTACKr&include_all_commits=true&count_public=true"/>
-  <img height="180em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=oregonstudios&layout=compact&langs_count=7&theme=codeSTACKr"/>
-</div>
-
 
 ## Tecnologias
 
