@@ -1,1 +1,0 @@
-Este repositório é dedicado ao projeto de um site inovador para a venda e troca de livros. Nosso objetivo é criar uma plataforma onde os amantes da leitura possam encontrar e compartilhar livros de forma eficiente e conveniente. Este README fornecerá uma visão geral do projeto, como usá-lo e como contribuir.
