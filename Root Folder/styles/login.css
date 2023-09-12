@@ -1,6 +1,0 @@
-@import url('colors.css');
-
-body {
-    background: linear-gradient(57deg, var(--cor-primaria) 3.81%, var(--cor-terciaria) 160.27%);
-
-}

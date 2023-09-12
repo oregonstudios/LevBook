@@ -1,0 +1,71 @@
+@import url('variables.css');
+
+body {
+    background: linear-gradient(57deg, var(--cor-primaria) 3.81%, var(--cor-terciaria) 160.27%);
+}
+main{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: var(--font-main);
+}
+.card-aceitar-termos {
+    width: 430px;
+    background: linear-gradient(151deg, var(--cor-terciaria) -88.36%, var(--cor-primaria) 23.8%, var(--cor-primaria) 73.96%, var(--cor-terciaria) 206.07%);
+    text-align: center;
+    margin: 0 20px;
+    border-radius: 7px;
+    box-shadow: -3px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    padding: 0 41px 40px 41px;
+    box-sizing: border-box;
+}
+.img-aceitar-termos{
+    width: 50%;
+    margin: 22px 0;
+}
+.card-aceitar-termos h2 {
+    color: #FFFFFF;
+    font-size: 20px;
+    margin: 0 0 15px 0;
+}
+.card-aceitar-termos p{
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 14px;
+}
+.form-aceitar-termos section{
+    display: flex;
+    gap: 10px;
+    align-items: flex-start;
+    margin: 40px 0;
+    color: rgba(255, 255, 255, 0.75);
+    font-size: 13px;
+    text-align: left;
+
+}
+.form-aceitar-termos section a{
+    text-decoration: none;
+    color: rgba(52, 131, 250, 0.75);
+}
+.form-aceitar-termos section .aceitar-termos-checkbox{
+    background: transparent;
+}
+.form-aceitar-termos .aceitar-termos-submit{
+    color: #FFF;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 8px 60px;
+    border-radius: 8px;
+    background: #F78310;
+    border-color: transparent;
+    margin: 0 0 10px 0;
+}
+.form-aceitar-termos .aceitar-termos-submit:hover{
+    cursor: pointer;
+}
+.ja-tenho-conta{
+    font-size: 13px;
+    text-decoration: none;
+    color: rgba(52, 131, 250, 0.75);
+    
+}
