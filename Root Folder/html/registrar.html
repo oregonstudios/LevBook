@@ -10,19 +10,20 @@
 </head>
 <body>
     <main>
-        <div class="card-aceitar-termos">
+        <div class="card-aceitar-termos-registrar">
             <img src="../images/aceitar-termos.png" alt="aceitar-termos" class="img-aceitar-termos">
-            <h2>Vamos te pedir alguns dados para criar a sua conta</h2>
-            <p>Leva apenas alguns minutos</p>
-            <form class="form-aceitar-termos" action="">
+            <h2 class="titulo-aceitar-termos">Vamos te pedir alguns dados para criar a sua conta</h2>
+            <p class="p-aceitar-termos">Leva apenas alguns minutos</p>
+            <form class="form-aceitar-termos">
                 <section>
-                    <input type="checkbox" name="" class="aceitar-termos-checkbox">
+                    <input required type="checkbox" name="" class="aceitar-termos-checkbox">
                     <label for="aceitar-termos-checkbox">Aceito os <a href="">Termos e condições</a> e autorizo o uso de meus dados de acordo com a <a href="">Declaração de privacidade</a>.</label>
                 </section>
-                <input type="submit" class="aceitar-termos-submit">
+                <input type="submit" class="aceitar-termos-submit" value="Enviar">
             </form>
             <a href="" class="ja-tenho-conta">Já tenho uma conta</a>
         </div>
     </main>
+    <script src="../scripts/registrar.js"></script>
 </body>
 </html>
