@@ -19,7 +19,8 @@ Aqui no LeveBook, acreditamos que os livros têm o poder de nos transportar para
 
 Desperte sua paixão pela leitura, explore novas histórias e faça parte de uma comunidade que respira literatura. O futuro da compra, venda e troca de livros está aqui, no LeveBook. Junte-se a nós e leve a magia das palavras para o próximo nível!
 
-
+## Deploy
+Este repositório contém o código-fonte do projeto web "Leve Book" e demonstra como realizar o deploy do site. Você pode acessar o site em https://leve-book-mewb.vercel.app/.
 ## Tecnologias
 
 <div style="display: inline_block">
