@@ -6,6 +6,9 @@ class User {
         this.senha = senha
     }
 }
+let loggedIn = false
+let usuarioLogado = ''
+
 const u00000001 = new User('Oregon', '(85) 98989-8989','oregonstudios@gmail.com','amolivros123')
 const u00000002 = new User('Roger', '(85) 99898-9898','profroger@gmail.com','amolivros123')
 
@@ -20,7 +23,8 @@ function signInAuth(email, senha){
         user => user.email === email && user.senha === senha
     );
     if (usuarioEncontrado) {
-        alert("Login bem-sucedido!");
+        usuarioLogado = usuarioEncontrado.nome
+        window.location.href = "../index.html";
     } else {
         alert("Credenciais inválidas. Tente novamente.");
     }
