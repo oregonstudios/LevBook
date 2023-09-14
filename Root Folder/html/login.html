@@ -3,16 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>login</title>
+    <title>Login</title>
     <link rel="stylesheet" href="../styles/reset.css">
-    <link rel="stylesheet" href="../styles/login.css">
+    <link rel="stylesheet" href="../styles/auth-styles.css">
     <link rel="icon" href="../images/logo.png">
 </head>
 <body>
     <main>
-        <div class="">
-
+        <div class="card card-sign-in">
+            <h2 class="titulo-login">Bem-vindo de volta!</h2>
+            <form class="form-login">
+                <section class="section-auth-credentials section-login">
+                    <label class="auth-email-label auth-label" for="input-email">E-mail:</label>
+                    <input class="auth-email-input auth-input" id="input-email" type="email" required>
+                    <label class="auth-password-label auth-label" for="input-senha">Senha:</label>
+                    <input class="auth-password-input auth-input" id="input-senha" type="password" required>
+                </section>
+                <input type="submit" class="auth-submit login-submit" value="Confirmar" formaction="">
+            </form>
+            <input type="button" value="Entrar com o google" class="entrar-com-google-button">
         </div>
     </main>
+    <script src="../Banco de dados/userCredentials.js"></script>
 </body>
 </html>
