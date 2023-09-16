@@ -37,8 +37,9 @@ Este repositório contém o código-fonte do projeto web "Leve Book" e demonstra
   <img align="center" alt="figma" src="https://img.shields.io/badge/Figma-F24E1E?style=for-the-badge&logo=figma&logoColor=white" />
   <img align="center" alt="github" src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />
   <img align="center" alt="vscode" src="https://img.shields.io/badge/Visual_Studio_Code-0078D4?style=for-the-badge&logo=visual%20studio%20code&logoColor=white" />
+  <img align="center" alt="ChatGPT" src="https://img.shields.io/badge/chatGPT-74aa9c?style=for-the-badge&logo=openai&logoColor=white" />
   <img align="center" alt="whatsapp" src="https://img.shields.io/badge/WhatsApp-25D366?style=for-the-badge&logo=whatsapp&logoColor=white" />
   <img align="center" alt="clickup" src="https://img.shields.io/badge/clickup-%237B68EE.svg?&style=for-the-badge&logo=clickup&logoColor=white" />
-  <img align="center" alt="vercel" src="https://img.shields.io/badge/Vercel-808080?style=for-the-badge&logo=vercel&logoColor=white" />
+  <img align="center" alt="vercel" src="https://img.shields.io/badge/Vercel-666666?style=for-the-badge&logo=vercel&logoColor=white" />
 </div><br/>
 
