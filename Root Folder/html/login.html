@@ -8,11 +8,12 @@
     <link rel="stylesheet" href="../styles/auth-styles.css">
     <link rel="icon" href="../images/logo.png">
 </head>
+</head>
 <body>
     <main>
         <div class="card card-sign-in">
             <h2 class="titulo-login">Bem-vindo de volta!</h2>
-            <form class="form-login">
+            <form class="form-login" id="login-form">
                 <section class="section-auth-credentials section-login">
                     <label class="auth-email-label auth-label" for="input-email">E-mail:</label>
                     <input class="auth-email-input auth-input" id="input-email" type="email" required>
@@ -24,6 +25,5 @@
             <input type="button" value="Entrar com o google" class="entrar-com-google-button">
         </div>
     </main>
-    <script src="../Banco de dados/userCredentials.js"></script>
-</body>
-</html>
+    <script type="module" src="../Banco de dados/login.js"></script>
+    
