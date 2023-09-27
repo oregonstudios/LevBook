@@ -1,0 +1,41 @@
+@import url('variables.css');
+
+footer {
+    font-family: var(--font-main);
+    display: flex;
+    justify-content: space-around;
+}
+footer h4 {
+    font-size: 16px;
+}
+footer a {
+    font-size: 14px;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+.footer-div{
+    display: flex;
+    flex-direction: column;
+    gap: 80px;
+}
+.footer-div2{
+    text-align: center;
+}
+.footer-div3{
+    gap: 100px;
+}
+.section-privacidade-termos, .section-mapa-do-site, .section-informacoes {
+    display: flex;
+    flex-direction: column;
+    white-space: nowrap;
+    
+}
+.section-privacidade-termos a, .section-mapa-do-site a, .section-informacoes a{
+    margin: 0 0 3px 0;
+    
+}
+.section-siga-nos img{
+    width: 30px;
+    height: 30px;
+}
