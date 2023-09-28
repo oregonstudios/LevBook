@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/auth-styles.css">
     <link rel="icon" href="../images/logo.png">
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="../Banco de dados/login.js"></script>
+    
 </head>
 </head>
 <body>
@@ -20,10 +24,8 @@
                     <label class="auth-password-label auth-label" for="input-senha">Senha:</label>
                     <input class="auth-password-input auth-input" id="input-senha" type="password" required>
                 </section>
-                <input type="submit" class="auth-submit login-submit" value="Confirmar" formaction="">
+                <input type="button" class="auth-submit login-submit" value="Confirmar" onclick="logar()">
             </form>
             <input type="button" value="Entrar com o google" class="entrar-com-google-button">
         </div>
     </main>
-    <script type="module" src="../Banco de dados/login.js"></script>
-    

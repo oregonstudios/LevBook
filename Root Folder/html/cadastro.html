@@ -7,6 +7,10 @@
     <link rel="stylesheet" href="../styles/reset.css">
     <link rel="stylesheet" href="../styles/auth-styles.css">
     <link rel="icon" href="../images/logo.png">
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore-compat.js"></script>
+    <script src="../Banco de dados/cadastro.js"></script>
 </head>
 <body>
     <main>
@@ -26,11 +30,11 @@
                     <label for="receber-ofertas-checkbox">Quero receber ofertas exclusivas por e-mail.</label>
                     <input type="checkbox" class="receber-ofertas-checkbox">
                 </section>
-                <input type="submit" class="auth-submit criar-conta" value="Confirmar">
+                <input type="button" class="auth-submit criar-conta" value="Confirmar" onclick="cadastrar()">
             </form>
             <input type="button" value="Entrar com o google" class="entrar-com-google-button">
         </div>
     </main>
-    <script type="module" src="../Banco de dados/cadastro.js"></script>
+    
 </body>
 </html>

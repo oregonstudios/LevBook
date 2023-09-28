@@ -1,7 +1,3 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-app.js";
-import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-auth.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/10.4.0/firebase-firestore.js";
-
 const firebaseConfig = {
     apiKey: "AIzaSyCkcdAuS1_XIUISRASVuWpsqgXM6y6f4ZU",
     authDomain: "levebook-31afb.firebaseapp.com",
@@ -12,33 +8,32 @@ const firebaseConfig = {
 };
 
 // Inicialize o Firebase com a configuração
-const firebaseApp = initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
 // Função para cadastrar um novo usuário no Firebase Authentication e redirecionar para a página de home
 function cadastrar() {
-    const email = document.getElementById("input-email").value;
-    const senha = document.getElementById("input-senha").value;
-    const nome = document.getElementById("input-nome").value;
-    const telefone = document.getElementById("input-telefone").value;
+    senha = document.getElementById("input-senha").value;
+    const usuario = {
+        email : document.getElementById("input-email").value,
+        
+        nome : document.getElementById("input-nome").value,
+        telefone : document.getElementById("input-telefone").value
+    }
 
     // Cadastrar o usuário no Firebase
-    const auth = getAuth(firebaseApp);
-    createUserWithEmailAndPassword(auth, email, senha)
+    firebase.auth().createUserWithEmailAndPassword(usuario.email,senha)
         .then((userCredential) => {
             const user = userCredential.user;
 
             // Após o cadastro no Firebase Authentication, enviar informações para o Firestore
-            const firestore = getFirestore(firebaseApp);
-            const usuariosCollection = collection(firestore, "usuarios");
-            addDoc(usuariosCollection, {
-                email: email,
-                nome: nome,
-                telefone: telefone
-            })
+            firebase.firestore()
+                .collection("usuarios")
+                .doc(usuario.email)
+                .set(usuario)
             .then(() => {
                 alert("Seus dados foram cadastrados com sucesso.");
                 // Redirecionar para a página de homepage após o cadastro bem-sucedido
-                window.location.href = "index.html";
+                window.location.href = "../html/index.html"; 
             })
             .catch((error) => {
                 alert("Falha ao cadastrar no Firestore: " + error.message);
@@ -49,9 +44,3 @@ function cadastrar() {
         });
 }
 
-// Adicionar um evento de envio ao formulário
-const cadastroForm = document.querySelector(".form-registrar");
-cadastroForm.addEventListener("submit", function (event) {
-    event.preventDefault();
-    cadastrar();
-});
