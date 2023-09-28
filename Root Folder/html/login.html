@@ -10,11 +10,19 @@
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.4.0/firebase-auth-compat.js"></script>
     <script src="../Banco de dados/login.js"></script>
-    
+
 </head>
 </head>
 <body>
     <main>
+        <div class="div-bem-vindo">
+            <h1>LeveBook</h1>
+            <h2>Bem-vindo!</h2>
+            <p>Seja você um ávido leitor ou apenas esteja começando a 
+                descobrir o encanto das palavras impressas, este é o lugar onde as 
+                palavras saltam das páginas para dar vida a mundos
+                desconhecidos e personagens inesquecíveis.</p>
+        </div>
         <div class="card card-sign-in">
             <h2 class="titulo-login">Bem-vindo de volta!</h2>
             <form class="form-login" id="login-form">
@@ -26,6 +34,6 @@
                 </section>
                 <input type="button" class="auth-submit login-submit" value="Confirmar" onclick="logar()">
             </form>
-            <input type="button" value="Entrar com o google" class="entrar-com-google-button">
+            <a href=""><img class="entrar-com-google-button" src="../images/entrar-com-google.png" alt=""></a>
         </div>
     </main>

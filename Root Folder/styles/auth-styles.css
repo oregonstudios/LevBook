@@ -1,25 +1,29 @@
 @import url('variables.css');
 
 body {
-    background: linear-gradient(57deg, var(--cor-primaria) 3.81%, var(--cor-terciaria) 160.27%);
+    background: url('../images/login-background.png');
+    background-size:cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr; 
 }
 main{
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
     font-family: var(--font-main);
 }
 .card {
     width: 430px;
-    background: linear-gradient(151deg, var(--cor-terciaria) -88.36%, var(--cor-primaria) 23.8%, var(--cor-primaria) 73.96%, var(--cor-terciaria) 206.07%);
+    backdrop-filter: blur(30px);
     text-align: center;
     margin: 0 20px;
     border-radius: 7px;
     box-shadow: -3px 4px 4px 0px rgba(0, 0, 0, 0.25);
     padding: 0 41px 40px 41px;
     box-sizing: border-box;
-    overflow: hidden
+    overflow: hidden;
 }
 .img-aceitar-termos{
     width: 60%;
@@ -107,22 +111,31 @@ main{
     border-color: black;
 }
 .entrar-com-google-button {
-    color: #FFF;
-    font-size: 19px;
-    font-weight: 600;
-    border-radius: 8px;
-    border: 1px solid #F78310;
-    background: transparent;
-    padding: 8px 11px;
+    width: 215px;
 }
-.entrar-com-google-button:hover{
-    cursor: pointer;
-}
-.entrar-com-google-button:active{
-    border-color: black;
-}
+
 .titulo-login{
     color: #FFFFFF;
     font-size: 20px;
     padding: 60px 0 17px 0;
+}
+
+
+.div-bem-vindo{
+    color: #FFF;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.div-bem-vindo h1{
+    font-size: 60px;
+    font-weight: 700;
+}
+.div-bem-vindo h2{
+    font-size: 35px;
+    font-weight: 700;
+}
+.div-bem-vindo p{
+    font-size: 18px;
 }

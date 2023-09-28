@@ -1,0 +1,65 @@
+@import url('variables.css');
+
+.novo-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-family: var(--font-main);  
+    padding:10px 10px;
+}
+.novo-header .div-header-main{
+    display: flex;
+    align-items: center;
+    gap: 30px;
+
+}
+.novo-header .logo{
+    width: 90px;
+}
+.novo-header .div-pesquisar{
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+.novo-header .div-pesquisar input{
+    width: 400px;
+    font-family: var(--font-main);
+    font-size: 16px;
+    padding: 9px;
+    border-radius: 11px;
+}
+
+.novo-header nav{
+    display: flex;
+    color: #FFF;
+    font-size: 13px;
+    gap: 20px;
+    
+}
+.novo-header nav a {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+}
+.novo-header nav a .img-chat{
+    width: 20px;
+    height: 20px;
+}
+.novo-header nav a p:hover {
+    color: orange;
+}
+.novo-header nav a p:hover {
+    color: orange;
+}
+
+.novo-header nav a p{
+    color: #FFF;
+    text-decoration: none;
+}
+.novo-header .div-anunciar .botao-anunciar{
+    color: #FFF;
+    text-decoration: none;
+    background-color: var(--cor-secundaria);
+    padding: 11px 33px;
+    border-radius: 18px;
+}
