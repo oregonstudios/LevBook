@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registrar-se</title>
+    <link rel="stylesheet" href="../styles/reset.css">
+    <link rel="stylesheet" href="../styles/auth-styles.css">
+    <link rel="icon" href="../images/logo.png">
+</head>
+<body>
+    <main>
+        <div class="card card-registrar">
+            <form class="form-registrar" id="cadastro-form">
+                <section class="section-auth-credentials section-registro">
+                    <label class="auth-name-label auth-label" for="input-nome">Nome:</label>
+                    <input class="auth-name-input auth-input" id="input-nome" type="text" required>
+                    <label class="auth-tel-label auth-label" for="input-telefone">Número de telefone:</label>
+                    <input class="auth-tel-input auth-input" id="input-telefone" type="tel" required>
+                    <label class="auth-email-label auth-label" for="input-email">E-mail:</label>
+                    <input class="auth-email-input auth-input" id="input-email" type="email" required>
+                    <label class="auth-password-label auth-label" for="input-senha">Senha:</label>
+                    <input class="auth-password-input auth-input" id="input-senha" type="password" required>
+                </section>
+                <section class="section-auth-one-checkbox section-receber-ofertas">
+                    <label for="receber-ofertas-checkbox">Quero receber ofertas exclusivas por e-mail.</label>
+                    <input type="checkbox" class="receber-ofertas-checkbox">
+                </section>
+                <input type="submit" class="auth-submit criar-conta" value="Confirmar">
+            </form>
+            <input type="button" value="Entrar com o google" class="entrar-com-google-button">
+        </div>
+    </main>
+    <script type="module" src="../Banco de dados/cadastro.js"></script>
+</body>
+</html>
