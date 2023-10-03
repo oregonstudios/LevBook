@@ -15,18 +15,18 @@ const LoginInput = styled.input`
     border: none;
     outline: none;
     padding: 0 0 0.5rem 0;
-    border-bottom: 2px solid #FFF;
+    border-bottom: 3px solid #FFF;
     background: transparent;
     color: #FFF;
     font-size: 18px;
-    font-weight: 600;
+    font-weight: 500;
 `
 
 export default function LoginInputLabel(props){
     return(
         <LoginInputLabelContainer>
             <LoginLabel htmlFor={props.InputId} >{props.children}</LoginLabel>
-            <LoginInput type={props.InputType} id={props.InputId} required={props.isRequired}></LoginInput>
+            <LoginInput type={props.InputType} id={props.InputId} required></LoginInput>
         </LoginInputLabelContainer>
     )
 }

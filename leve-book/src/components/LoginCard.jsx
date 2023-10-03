@@ -8,7 +8,7 @@ const Card = styled.div`
     box-shadow: -3px 4px 4px 0px rgba(0, 0, 0, 0.25);
     box-sizing: border-box;
     overflow: hidden;
-    padding: 20px 40px;
+    padding: 0px 50px;
 
 `
 

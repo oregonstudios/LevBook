@@ -2,7 +2,7 @@
 import styled from "styled-components"
 // componentes
 import LoginCard from "components/LoginCard"
-import LoginInputLabel from "components/LoginInputLabel"
+import LoginCriarConta from 'components/LoginCriarConta'
 // Imagens
 import BackgroundLogin from '../images/login-background.png'
 
@@ -41,12 +41,6 @@ const DescDoSite = styled.p`
     font-size: 18px;
 `
 
-const TextoCriarConta = styled.h1`
-    font-family: var(--font-main);
-    font-size: 40px;
-    font-weight: 700;
-`
-
 
 
 export default function Login() {
@@ -62,10 +56,7 @@ export default function Login() {
                 desconhecidos e personagens inesquecíveis.</DescDoSite>
     </DivBemVindo>*/}
                 <LoginCard>
-                    <TextoCriarConta>Criar conta</TextoCriarConta>
-                    <LoginInputLabel/>
-                    <LoginInputLabel/>
-                    <LoginInputLabel/>
+                    <LoginCriarConta />
                 </LoginCard>
             </LoginContainer>
         </PageWrapper>
