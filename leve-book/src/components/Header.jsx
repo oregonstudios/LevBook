@@ -70,6 +70,7 @@ const BarraDePesquisa = styled.input`
     padding: 9px;
     border-radius: 11px;
     border: none;
+    background-color: #D9D9D9;
 `
 const BotaoPesquisa = styled.button`
     border: none;
@@ -85,6 +86,7 @@ const NavHeader = styled.nav`
         display: flex;
         align-items: center;
         gap: 4px;
+        color: #000;
 }
 `
 
