@@ -7,7 +7,7 @@ const LoginInputLabelContainer = styled.div`
     gap: 10px;
 `
 const LoginLabel = styled.label`
-    font-size: 22px;
+    font-size: 17px;
     font-weight: 600;
 `
 const LoginInput = styled.input`
@@ -18,7 +18,7 @@ const LoginInput = styled.input`
     border-bottom: 3px solid #FFF;
     background: transparent;
     color: #FFF;
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 500;
 `
 

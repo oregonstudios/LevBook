@@ -1,8 +1,11 @@
+import { useState } from "react"
+
 // styled components
 import styled from "styled-components"
 // componentes
 import LoginCard from "components/LoginCard"
 import LoginCriarConta from 'components/LoginCriarConta'
+import LoginEntrar from 'components/LoginEntrar'
 // Imagens
 import BackgroundLogin from '../images/login-background.png'
 
@@ -28,6 +31,9 @@ const DivBemVindo = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px;
+    @media (max-width: 1050px) {
+        display: none;
+    }
 `
 const NomeDoSite = styled.h1`
     font-size: 60px;
@@ -44,19 +50,27 @@ const DescDoSite = styled.p`
 
 
 export default function Login() {
+    const [modo, setModo] = useState('criar-conta');
+    
+    const componentes = {
+        'criar-conta': <LoginCriarConta atualizarModo={setModo}/>,
+        'entrar': <LoginEntrar atualizarModo={setModo}/>,
+      };
+
+
     return (
         <PageWrapper>
             <LoginContainer>
-                {/*<DivBemVindo>
+                <DivBemVindo>
                     <NomeDoSite>LeveBook</NomeDoSite>
                     <TextoBemVindo>Bem-vindo!</TextoBemVindo>
                     <DescDoSite>Seja você um ávido leitor ou apenas esteja começando a 
-                descobrir o encanto das palavras impressas, este é o lugar onde as 
-                palavras saltam das páginas para dar vida a mundos
-                desconhecidos e personagens inesquecíveis.</DescDoSite>
-    </DivBemVindo>*/}
+                    descobrir o encanto das palavras impressas, este é o lugar onde as 
+                    palavras saltam das páginas para dar vida a mundos
+                    desconhecidos e personagens inesquecíveis.</DescDoSite>
+                </DivBemVindo>
                 <LoginCard>
-                    <LoginCriarConta />
+                    {componentes[modo]}
                 </LoginCard>
             </LoginContainer>
         </PageWrapper>
