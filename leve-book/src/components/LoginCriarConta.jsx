@@ -1,7 +1,12 @@
+import { useState } from "react";
 import styled from "styled-components"
 import LoginInputLabel from "components/LoginInputLabel"
 
 import {FcGoogle} from 'react-icons/fc'
+import { auth } from "../services/firebaseConfig";
+import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useNavigate } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const TituloCriarConta = styled.h1`
     font-family: var(--font-main);
@@ -77,7 +82,34 @@ const LinkEntre = styled.a`
     text-decoration: underline;
     cursor: pointer;
 `
-export default function LoginCriarConta({ atualizarModo }){
+
+
+export default function LoginCriarConta({ atualizarModo }) {
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
+    const navigate = useNavigate(); // Inicialize o navigate
+
+    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+
+    function handleSignOut(e) {
+        e.preventDefault();
+        createUserWithEmailAndPassword(email, password)
+            .then(() => {
+                // Redirecione apenas se a criação de conta for bem-sucedida
+                navigate("/"); // Substitua pela rota desejada
+            })
+            .catch((error) => {
+                console.error("Erro ao criar conta:", error);
+            });
+    }
+
+    if (loading) {
+        return <p>carregando...</p>;
+      }
+      if (user) {
+        return console.log(user);
+      }
+
     return(
         <div>
             <TituloCriarConta>Criar conta</TituloCriarConta>
@@ -89,14 +121,16 @@ export default function LoginCriarConta({ atualizarModo }){
                 </LoginInputLabel>
                 <LoginInputLabel 
                     InputId='input-email-criar-conta' 
-                    InputType='email'>
+                    InputType='email'
+                    onChange={(e) => setEmail(e.target.value)}>
                     E-mail
                 </LoginInputLabel>
                 <LoginInputLabel 
                     InputId='input-senha-criar-conta' 
-                    InputType='password'>
+                    InputType='password'
+                    onChange={(e) => setPassword(e.target.value)}>
                     Senha
-                    </LoginInputLabel>
+                </LoginInputLabel>
                 <SectionAceitarTermos>
                     <CheckboxAceitarTermos type='checkbox' id='check-box'/>
                     <LabelAceitarTermos 
@@ -105,7 +139,7 @@ export default function LoginCriarConta({ atualizarModo }){
                     </LabelAceitarTermos>
                 </SectionAceitarTermos >
                 <SectionSubmit>
-                    <LoginFormSubmit type='submit' value='Prosseguir'/>
+                    <LoginFormSubmit type='submit' value='Prosseguir' onClick={handleSignOut} />
                     <EntrarComGoogle/>
                 </SectionSubmit>
             </FormCriarConta>
