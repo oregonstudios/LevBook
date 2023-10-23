@@ -112,11 +112,11 @@ const firebaseConfig = {
     appId: "1:406182333254:web:d4d7b0f38a5dfc0e32b347"
   };
 
-
 // Inicialização do Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 const firestore = getFirestore(firebaseApp);
+
 
 export default function LoginCriarConta({ atualizarModo }) {
   const [email, setEmail] = useState("");
@@ -126,7 +126,8 @@ export default function LoginCriarConta({ atualizarModo }) {
   const [name, setName] = useState("");
 
   // Função para lidar com o cadastro de usuário
-  function CriarUsuario() {
+
+  /*function CriarUsuario() {
     createUserWithEmailAndPassword(auth, email, password)
       .then(() => {
         console.log("Conta criada com sucesso");
@@ -136,23 +137,25 @@ export default function LoginCriarConta({ atualizarModo }) {
       .catch((error) => {
         console.error("Erro ao criar conta:", error);
       });
-  }
+  }*/
 
   const handleRegister = async () => {
     try {
-      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const usersRef = collection(firestore, 'users');
       const querySnapshot = await getDocs(usersRef);
-      const user = userCredential.user;
-
+  
       const isUserExists = querySnapshot.docs.some((doc) => doc.data().email === email);
-
+  
       if (isUserExists) {
         // Usuário já existe, emita um alerta ou faça o que for necessário
         alert("Este usuário já está cadastrado!");
         return;
       }
-
+  
+      // Crie o usuário na autenticação
+      const userCredential = await createUserWithEmailAndPassword(auth, email, password);
+      const user = userCredential.user;
+  
       // Adicione dados ao Firestore
       const userRef = collection(firestore, 'users');
       const newUserDoc = {
@@ -160,14 +163,14 @@ export default function LoginCriarConta({ atualizarModo }) {
         email: user.email,
       };
       const docRef = await addDoc(userRef, newUserDoc);
-
-      // Chame a função CriarUsuario
-      CriarUsuario();
+      navigate("/")
+  
     } catch (error) {
       console.error(error);
       alert("Desculpe, houve um erro durante o cadastro");
     }
   };
+  
 
   // Função para lidar com o login com o Google
   function signUpWithGoogle() {
@@ -186,53 +189,45 @@ export default function LoginCriarConta({ atualizarModo }) {
       });
   }
 
-
-
   return (
     <>    
-      <div className="wrapper">
-        <form action="">
-          <h1>Cadastre-se</h1>
-
-          <div className="input-box">
-            <input
-              type="text"
-              placeholder="NOME"
-              value={name}
-              onChange={(e) => setName(e.target.value)}/>
-              <i className="bx bx-user"></i>
-            </div>
-
-          <div className="input-box">
-  <input
-    type="text"
-    placeholder="EMAIL"
-    value={email}
-    onChange={(e) => setEmail(e.target.value)}
-  />
-  <i className="bx bx-user"></i>
-</div>
-
-<div className="input-box">
-  <input
-    type="password"
-    placeholder="SENHA"
-    value={password}
-    onChange={(e) => setPassword(e.target.value)}/>
-  <i className="bx bx-lock-alt"></i>
-</div>
-
-<button id="btnn" type="button" onClick={handleRegister} className="btn">
-  CRIAR CONTA
-</button>
-          <div className="register-link">
-            <div>
-              <button type="button" onClick={signUpWithGoogle}>google</button>
-            </div>
-          </div>
-        </form>
-        <ParagrafoCriarConta>Já possui uma conta? <LinkEntre onClick={() => atualizarModo('entrar')}>Entre</LinkEntre></ParagrafoCriarConta>
-      </div>
+    <div>
+      <TituloCriarConta>Criar conta</TituloCriarConta>
+      <FormCriarConta onSubmit={(e) => {
+  e.preventDefault(); // Evita a recarga da página quando o formulário é submetido
+  handleRegister();}}>
+        <LoginInputLabel
+          InputId='input-nome-criar-conta'
+          InputType='text'
+          onChange={(e) => setName(e.target.value)}>
+          Nome
+        </LoginInputLabel>
+        <LoginInputLabel
+          InputId='input-email-criar-conta'
+          InputType='email'
+          onChange={(e) => setEmail(e.target.value)}>
+          E-mail
+        </LoginInputLabel>
+        <LoginInputLabel
+          InputId='input-senha-criar-conta'
+          InputType='password'
+          onChange={(e) => setPassword(e.target.value)}>
+          Senha
+        </LoginInputLabel>
+        <SectionAceitarTermos>
+          <CheckboxAceitarTermos type='checkbox' id='check-box' />
+          <LabelAceitarTermos
+            htmlFor='check-box'>
+            Concordo com os Termos e condições
+          </LabelAceitarTermos>
+        </SectionAceitarTermos>
+        <SectionSubmit>
+          <LoginFormSubmit type='submit' value='Prosseguir' />
+          <EntrarComGoogle type="button" onClick={signUpWithGoogle} />
+        </SectionSubmit>
+      </FormCriarConta>
+      <ParagrafoCriarConta>Já possui uma conta? <LinkEntre onClick={() => atualizarModo('entrar')}>Entre</LinkEntre></ParagrafoCriarConta>
+    </div>
     </>
   );
 }

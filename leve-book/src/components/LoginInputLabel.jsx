@@ -26,7 +26,9 @@ export default function LoginInputLabel(props){
     return(
         <LoginInputLabelContainer>
             <LoginLabel htmlFor={props.InputId} >{props.children}</LoginLabel>
-            <LoginInput type={props.InputType} id={props.InputId} required></LoginInput>
+            <LoginInput type={props.InputType} id={props.InputId} value={props.value}
+                onChange={props.onChange} required></LoginInput>
+
         </LoginInputLabelContainer>
     )
 }

@@ -4,12 +4,10 @@ import LoginInputLabel from "components/LoginInputLabel"; // Importa um componen
 
 import { FcGoogle } from 'react-icons/fc'; // Importa o ícone do Google
 import { IoIosArrowBack } from 'react-icons/io'; // Importa o ícone de seta para voltar
-import { useNavigate, Link } from 'react-router-dom'; // Importa utilitários de roteamento
+import { useNavigate } from 'react-router-dom'; // Importa utilitários de roteamento
 import { initializeApp } from "firebase/app"; // Importa a função de inicialização do Firebase
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'; // Importa as funções de autenticação do Firebase
 
-
-// Resto do seu código
 
 const SetaVoltar = styled(IoIosArrowBack)`
     height: 25px;
@@ -93,13 +91,15 @@ const firebaseConfig = {
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
 
-
+function handleLogin(event) {
+  event.preventDefault();
+}
 
 const LoginEntrar = ({atualizarModo}) => {
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
-    const [setEmailError] = useState("");
-    const [setPasswordError] = useState("");
+    const [emailError, setEmailError] = useState("");
+    const [passwordError, setPasswordError] = useState("");
     const [user, setUser] = useState();
 
 
@@ -123,7 +123,7 @@ const LoginEntrar = ({atualizarModo}) => {
 
      // Manipula a mudança no campo de email
      function onChangeEmail(event) {
-      const value = event.target.value.trim();
+      const value = event.target.value;
       setEmail(value);
   }
 
@@ -169,6 +169,7 @@ function login() {
                 })
                 .catch((error) => {
                     console.error("Erro ao enviar e-mail de redefinição de senha:", error);
+                    alert("E-mail inválido", error);
                     setEmailError(errorMessages[error.code] || error.message);
                 });
         }
@@ -190,52 +191,41 @@ function login() {
 
     return (
       <>
-      <SetaVoltar onClick={() => atualizarModo("criar-conta")} />
-        <div className="wrapper">
-          <form action="">
-            <h1>Login</h1>
-            <div className="input-box">
-              <input
-                type="email"
-                placeholder="EMAIL"
-                id="input-email-entrar"
-                value={email}
-                onChange={onChangeEmail}/>
-            </div>
-
-            <div className="input-box">
-              <input
-                type="password"
-                placeholder="PASSWORD"
-                id="input-senha-entrar"
-                value={password}
-                onChange={onChangePassword}/>
-            </div>
-
-            <div className="remember-forgot">
-              <a
-                className="remember-link"
-                href="#"
-                onClick={recoverPassword}>
-                ESQUECI MINHA SENHA.
-              </a>
-            </div>
-
-            <button
-              type="button"
-              className="btn"
-              id="login-button"
-              onClick={login}>
-              ENTRAR
-            </button>
-
-            <button
-              type="button"
-              onClick={signInWithGoogle}
-              className="btn-google">
-              <i className='bx bxl-google' style={{fontSize: '18px', verticalAlign: 'middle'}}></i> ENTRAR COM O GOOGLE
-            </button>
-          </form>
+      <div>
+            <SetaVoltar onClick={() => atualizarModo("criar-conta")}/>
+            <TituloEntrar>Bem-vindo de volta!</TituloEntrar>
+            <FormEntrar onSubmit={handleLogin}>
+                <LoginInputLabel
+                    InputId="input-email-entrar"
+                    InputType="email"
+                    value={email}
+                    onChange={onChangeEmail}
+                >
+                    E-mail
+                </LoginInputLabel>
+                <LoginInputLabel
+                    InputId="input-senha-entrar"
+                    InputType="password"
+                    value={password}
+                    onChange={onChangePassword}
+                >
+                    Senha
+                </LoginInputLabel>
+                <SectionSubmit>
+                    <LoginFormSubmit
+                        type="submit"
+                        value="Entrar"
+                        className="button"
+                        id="login-button"
+                        onClick={login}
+                    />
+                    <EntrarComGoogle type="button" onClick={signInWithGoogle} />
+                </SectionSubmit>
+            </FormEntrar>
+            <ParagrafoEsqueceuSenha>
+                Esqueceu a senha?{" "}
+                <LinkRecuperarSenha onClick={recoverPassword}>Clique aqui</LinkRecuperarSenha>
+            </ParagrafoEsqueceuSenha>
         </div>
       </>
     );
