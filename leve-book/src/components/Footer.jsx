@@ -9,6 +9,11 @@ import SeloSeguranca3 from '../images/imagens-de-selo-de-seguranca-png-8 1.png'
 // React Icons
 import {FaSquareYoutube, FaSquareFacebook, FaSquareInstagram, FaSquareXTwitter } from 'react-icons/fa6'
 
+
+
+
+
+
 const FooterContainer = styled.footer`
     font-family: var(--font-main);
     display: flex;
@@ -19,6 +24,7 @@ const FooterTitle = styled.h4`
     font-size: 16px;
     padding: 0 0 15px 0 ;
     font-weight: bold;
+
 `
 const LinkFooter = styled.a`
     font-size: 14px;
@@ -55,6 +61,7 @@ const SectionComTexto = styled.section`
 
 export default function Footer() {
     return(
+
         <FooterContainer>
             <FooterDiv>
                 <SectionComTexto>
