@@ -4,23 +4,18 @@ import styled from 'styled-components';
 const StyledLink = styled(Link)`
     color: #FFF;
     text-decoration: none;
-
-    &:hover {
-        color: orange;
-    }
-
-    &.linkDestacado {
-        text-decoration: underline;
-    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+    font-size: 14px;
 `
-
 
 export default function HeaderLink({ children, to}){
     const location = useLocation();
 
     return(
-        <StyledLink className={`
-        ${location.pathname === to ? 'linkDestacado' : ""}`}
+        <StyledLink 
         to={to}>
         {children}
         </StyledLink>

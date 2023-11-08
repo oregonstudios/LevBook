@@ -5,115 +5,135 @@ import HeaderLink from './HeaderLink';
 // imagens
 import Logo from '../images/logo.png'
 // React Icons
-import {BiSearchAlt2, BiHomeAlt2} from 'react-icons/bi'
-import {PiSquaresFour, PiChatCircleBold} from 'react-icons/pi'
-import {MdOutlineNotificationsNone, MdLogin} from 'react-icons/md'
-import {HiOutlineShoppingBag} from 'react-icons/hi'
+import {FaBars} from 'react-icons/fa'
+import {RiShoppingBasket2Line, RiHeartLine, RiUser3Line, RiSearchLine} from 'react-icons/ri'
 
 const itensNavHeader = [
     {
-        nome: 'Home',
-        icone: <BiHomeAlt2 size={20}/>,
-        pathname: '/'
+        nome: 'Favoritos',
+        icone: <RiHeartLine size={22}/>,
+        pathname: '/favoritos'
     },
     {
-        nome: 'Meus Anúncios',
-        icone: <PiSquaresFour size={22}/>,
-        pathname: '/meusanuncios'
-    },
-    {
-        nome: 'Chat',
-        icone: <PiChatCircleBold size={20}/>,
-        pathname: '/chat'
-    },
-    {
-        nome: 'Notificações',
-        icone: <MdOutlineNotificationsNone size={23}/>,
-        pathname: '/notificacoes'
-    },
-    {
-        nome: 'Sacola',
-        icone: <HiOutlineShoppingBag size={22}/>,
-        pathname: '/sacola'
-    },
-    {
-        nome: 'Login',
-        icone: <MdLogin size={22}/>,
+        nome: 'Entrar',
+        icone: <RiUser3Line size={22}/>,
         pathname: '/login'
     },
+    {
+        nome: 'Minha Cesta',
+        icone: <RiShoppingBasket2Line size={22}/>,
+        pathname: '/cesta'
+    }
 ]
-
 const HeaderContainer = styled.header`
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    font-family: var(--font-main);  
-    padding:10px 10px;
-`
-const DivHeaderMain = styled.div`
-    display: flex;
-    align-items: center;
-    gap: 30px;
-`
-const HeaderLogo = styled.img`
-    width: 90px;
-`
-const SectionPesquisar = styled.section`
-    display: flex;
-    align-items: center;
-    gap: 6px;
-`
-const BarraDePesquisa = styled.input`
-    width: 400px;
     font-family: var(--font-main);
-    font-size: 16px;
-    padding: 9px;
-    border-radius: 11px;
-    border: none;
-    background-color: #D9D9D9;
 `
-const BotaoPesquisa = styled.button`
-    border: none;
-    background: none;
+
+const SectionCategorias = styled.section`
+    display: flex;
+    align-items: center;
+    color: white;
+    gap: 5px;
     cursor: pointer;
 `
-const NavHeader = styled.nav`
-    display: flex;
-    color: #FFF;
-    font-size: 13px;
-    gap: 20px;
-    a {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-        color: #000;
-}
+const TextoCategorias = styled.p`
+    font-size: 17px;
 `
 
-const BotaoAnunciar = styled.a`
-    color: #FFF;
-    text-decoration: none;
+
+const PrimeiraSection = styled.section`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cor-primaria);
+    width: 100%;    
+    gap: 40px;
+`
+const HeaderLogo = styled.img`
+    width: 120px;
+`
+
+const FormPesquisa = styled.form`
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+
+`
+const BarraDePesqisa = styled.input`
+    width: 500px;
+    height: 40px;
+    font-size: 19px;
+    background-color: #ffffffea;
+    color: #000000a8;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    padding: 0 49px 0 10px;
+
+    &::-webkit-search-cancel-button {
+    -webkit-appearance: none;
+    appearance: none;
+    display: none;
+  }
+`
+const IconeLupa = styled.button`
+    font-size: 24px;
+    position: absolute;
+    right: 10px;
+    top: 6px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background: transparent;
+`
+const NavBar = styled.menu`
+    display: flex;
+    gap: 30px;
+`
+
+const SegundaSection = styled.section`
     background-color: var(--cor-secundaria);
-    padding: 11px 33px;
-    border-radius: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 27px;
+`
+const TextoSegundaSection = styled.p`
+    font-size: 15px;
 `
 
 export default function Header(){
     return(
         <HeaderContainer>
-            <DivHeaderMain>
-                <HeaderLogo src={Logo} alt="Logo"/>
-                <SectionPesquisar>
-                    <BarraDePesquisa type="text" placeholder="Títulos, Autores, Gêneros e Linhas Editoriais"/>
-                    <BotaoPesquisa><BiSearchAlt2 size={30}/></BotaoPesquisa>
-                </SectionPesquisar>
-            </DivHeaderMain>
-                <NavHeader>
-                    {itensNavHeader.map( item => (
-                        <HeaderLink to={item.pathname}>{item.icone}{item.nome}</HeaderLink>
-                    ))}
-                </NavHeader >
-                <BotaoAnunciar class="botao-anunciar" href="">Anunciar</BotaoAnunciar>
+            <PrimeiraSection>
+
+                <HeaderLink to='/'>
+                    <HeaderLogo src={Logo}/>
+                </HeaderLink>
+
+                <SectionCategorias>
+                    <FaBars size='20px'/>
+                    <TextoCategorias>Categorias</TextoCategorias>
+                </SectionCategorias>
+                <FormPesquisa>
+                    <BarraDePesqisa type='search' placeholder='O que você está procurando?'/>
+                    <IconeLupa>
+                        <RiSearchLine/>
+                    </IconeLupa>
+                </FormPesquisa>
+                <NavBar>
+                {itensNavHeader.map( item => (
+                    <HeaderLink to={item.pathname}>{item.icone}{item.nome}</HeaderLink>
+                ))}
+
+                </NavBar>
+            </PrimeiraSection>
+            <SegundaSection>
+                <TextoSegundaSection>Explore um mundo de conhecimento e emoção em nossa loja online de livros. Encontre a sua próxima história hoje!</TextoSegundaSection>
+            </SegundaSection>
+
+
         </HeaderContainer>
     )
 }

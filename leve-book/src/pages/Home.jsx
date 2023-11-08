@@ -281,8 +281,10 @@ const ProductsSubTitle = styled.div`
 
 export default function Home() {
   return (
-    <Body>
+    <div>
       <Header />
+
+    <Body>
       <main>
         <HeroSection>
           <HeroIllustration src={mainillustration} alt="" />
@@ -411,6 +413,7 @@ export default function Home() {
       <Line />
       <Footer />
     </Body>
+    </div>
     
   );
 }
