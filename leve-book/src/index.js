@@ -10,6 +10,7 @@ const GlobalStyle = createGlobalStyle`
     --cor-terciaria: rgba(242, 114, 165);
     --cor-quaternaria: rgba(240, 208, 236, 1);
     --font-main: 'Montserrat', sans-serif;
+    --font-secundaria: 'Sora', sans-serif;
   }
 
   html, body, div, span, applet, object, iframe,

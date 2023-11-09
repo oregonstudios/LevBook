@@ -1,5 +1,7 @@
 // React Router
 import styled from 'styled-components';
+import { Link} from 'react-router-dom';
+
 // componentes
 import HeaderLink from './HeaderLink';
 // imagens
@@ -48,9 +50,25 @@ const PrimeiraSection = styled.section`
     background-color: var(--cor-primaria);
     width: 100%;    
     gap: 40px;
+    padding: 10px 0 ;
 `
+
+const LeveBook = styled(Link)`
+    color: #FFF;
+    text-decoration: none;
+    display: flex;
+    flex-direction:row;
+    align-items: center;
+    gap: 2px;
+    font-size: 14px;
+`
+
 const HeaderLogo = styled.img`
-    width: 120px;
+    width: 100px;
+`
+const NomeLoja = styled.h1`
+    font-family: var(--font-secundaria);
+    font-size: 26px;
 `
 
 const FormPesquisa = styled.form`
@@ -108,9 +126,10 @@ export default function Header(){
         <HeaderContainer>
             <PrimeiraSection>
 
-                <HeaderLink to='/'>
+                <LeveBook to='/'>
                     <HeaderLogo src={Logo}/>
-                </HeaderLink>
+                    <NomeLoja>Leve Book</NomeLoja>
+                </LeveBook>
 
                 <SectionCategorias>
                     <FaBars size='20px'/>
