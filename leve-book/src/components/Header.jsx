@@ -4,10 +4,10 @@ import { Link} from 'react-router-dom';
 
 // componentes
 import HeaderLink from './HeaderLink';
+import HeaderMenu from './HeaderMenu';
 // imagens
 import Logo from '../images/logo.png'
 // React Icons
-import {FaBars} from 'react-icons/fa'
 import {RiShoppingBasket2Line, RiHeartLine, RiUser3Line, RiSearchLine} from 'react-icons/ri'
 
 const itensNavHeader = [
@@ -29,19 +29,11 @@ const itensNavHeader = [
 ]
 const HeaderContainer = styled.header`
     font-family: var(--font-main);
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
 `
-
-const SectionCategorias = styled.section`
-    display: flex;
-    align-items: center;
-    color: white;
-    gap: 5px;
-    cursor: pointer;
-`
-const TextoCategorias = styled.p`
-    font-size: 17px;
-`
-
 
 const PrimeiraSection = styled.section`
     display: flex;
@@ -64,11 +56,11 @@ const LeveBook = styled(Link)`
 `
 
 const HeaderLogo = styled.img`
-    width: 100px;
+    width: 80px;
 `
 const NomeLoja = styled.h1`
     font-family: var(--font-secundaria);
-    font-size: 26px;
+    font-size: 24px;
 `
 
 const FormPesquisa = styled.form`
@@ -82,7 +74,7 @@ const BarraDePesqisa = styled.input`
     width: 500px;
     height: 40px;
     font-size: 19px;
-    background-color: #ffffffea;
+    background-color: #e3e2e2;
     color: #000000a8;
     outline: none;
     border: none;
@@ -110,31 +102,16 @@ const NavBar = styled.menu`
     gap: 30px;
 `
 
-const SegundaSection = styled.section`
-    background-color: var(--cor-secundaria);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 27px;
-`
-const TextoSegundaSection = styled.p`
-    font-size: 15px;
-`
 
 export default function Header(){
     return(
         <HeaderContainer>
             <PrimeiraSection>
-
                 <LeveBook to='/'>
                     <HeaderLogo src={Logo}/>
                     <NomeLoja>Leve Book</NomeLoja>
                 </LeveBook>
-
-                <SectionCategorias>
-                    <FaBars size='20px'/>
-                    <TextoCategorias>Categorias</TextoCategorias>
-                </SectionCategorias>
+                <HeaderMenu/>
                 <FormPesquisa>
                     <BarraDePesqisa type='search' placeholder='O que você está procurando?'/>
                     <IconeLupa>
@@ -145,13 +122,8 @@ export default function Header(){
                 {itensNavHeader.map( item => (
                     <HeaderLink to={item.pathname}>{item.icone}{item.nome}</HeaderLink>
                 ))}
-
                 </NavBar>
             </PrimeiraSection>
-            <SegundaSection>
-                <TextoSegundaSection>Explore um mundo de conhecimento e emoção em nossa loja online de livros. Encontre a sua próxima história hoje!</TextoSegundaSection>
-            </SegundaSection>
-
 
         </HeaderContainer>
     )

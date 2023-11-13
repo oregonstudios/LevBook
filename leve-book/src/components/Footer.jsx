@@ -17,6 +17,7 @@ import {FaSquareYoutube, FaSquareFacebook, FaSquareInstagram, FaSquareXTwitter, 
 
 const FooterContainer = styled.footer`
     font-family: var(--font-main);
+    box-shadow: 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 `
 const FooterTitle = styled.h4`
     font-size: 18px;
@@ -53,7 +54,7 @@ const PrimeiraSection = styled.section`
     background-color: var(--cor-secundaria);
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: space-around;
 `
 
 const LeveBook = styled(Link)`

@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import Header from "components/Header";
 import Footer from "components/Footer";
+import HeaderSection from "components/HeaderSection";
 // Images
 import mainillustration from "../images/illustration.png";
 import profilecreation from "../images/profile-creation.png";
@@ -282,7 +283,7 @@ export default function Home() {
   return (
     <div>
       <Header />
-
+      <HeaderSection/>
     <Body>
       <main>
         <HeroSection>
