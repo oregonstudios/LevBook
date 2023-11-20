@@ -43,9 +43,7 @@ const StyledLink = styled(Link)`
     padding: 8px 0;
     
     &:hover{
-        background-color: var(--cor-secundaria);
-        border-top: 1px solid;
-        border-bottom: 1px solid;
+        color: var(--cor-secundaria);
     }
 `
 

@@ -17,15 +17,17 @@ export default function AppRoutes() {
       <BrowserRouter>
         <Routes>
           <Route path='/' element={<Home />} />
-          <Route path='/login' element={<Login />} />
-          <Route path='/favoritos' element={<Favoritos />} />
+          <Route path='login' element={<Login />} />
+          <Route path='favoritos' element={<Favoritos />} />
           
-          <Route path='/livros/fantasia'  element={<Livros />} />
-          <Route path='/livros/ficcao'    element={<Livros />} />
-          <Route path='/livros/receitas'  element={<Livros />} />
-          <Route path='/livros/religiao'  element={<Livros />} />
-          <Route path='/livros/romances'  element={<Livros />} />
-          <Route path='/livros/terror'    element={<Livros />} />
+          <Route path='livros' element={<Livros/>}>
+            <Route path='fantasia'  element={<Livros />} />
+            <Route path='ficcao'    element={<Livros />} />
+            <Route path='receitas'  element={<Livros />} />
+            <Route path='religiao'  element={<Livros />} />
+            <Route path='romances'  element={<Livros />} />
+            <Route path='terror'    element={<Livros />} />
+          </Route>
 
           <Route path='*' element={<h1>Página não encontrada</h1>} />
         </Routes>

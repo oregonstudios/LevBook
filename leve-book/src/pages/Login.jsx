@@ -22,12 +22,12 @@ const LoginContainer = styled.main`
     font-family: var(--font-main);
     height: 100vh;
     margin: 0 30px;
-    gap: 50px;
+    gap: 150px;
     color: white;
 `
 const DivBemVindo = styled.div`
     color: #FFF;
-    width: 900px;
+    width: 800px;
     display: flex;
     flex-direction: column;
     gap: 10px;

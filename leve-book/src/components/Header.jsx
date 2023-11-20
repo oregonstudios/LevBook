@@ -27,22 +27,22 @@ const itensNavHeader = [
         pathname: '/cesta'
     }
 ]
-const HeaderContainer = styled.header`
-    font-family: var(--font-main);
+const HeaderBackground = styled.header`
+    width: 100%;
+    display: flex;
+    justify-content: center;
     position: sticky;
     top: 0px;
-    width: 100%;
     box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    padding: 10px 0 ;
+    background-color: var(--cor-primaria);
 `
-
-const PrimeiraSection = styled.section`
+const HeaderContainer = styled.div`
+    font-family: var(--font-main);
+    width: 1250px;
     display: flex;
     align-items: center;
-    justify-content: center;
-    background-color: var(--cor-primaria);
-    width: 100%;    
-    gap: 40px;
-    padding: 10px 0 ;
+    justify-content: space-between;
 `
 
 const LeveBook = styled(Link)`
@@ -99,32 +99,31 @@ const IconeLupa = styled.button`
 `
 const NavBar = styled.menu`
     display: flex;
-    gap: 30px;
+    gap: 40px;
 `
 
 
 export default function Header(){
     return(
-        <HeaderContainer>
-            <PrimeiraSection>
-                <LeveBook to='/'>
-                    <HeaderLogo src={Logo}/>
-                    <NomeLoja>Leve Book</NomeLoja>
-                </LeveBook>
-                <HeaderMenu/>
-                <FormPesquisa>
-                    <BarraDePesqisa type='search' placeholder='O que você está procurando?'/>
-                    <IconeLupa>
-                        <RiSearchLine/>
-                    </IconeLupa>
-                </FormPesquisa>
-                <NavBar>
-                {itensNavHeader.map( item => (
-                    <HeaderLink to={item.pathname}>{item.icone}{item.nome}</HeaderLink>
-                ))}
-                </NavBar>
-            </PrimeiraSection>
-
-        </HeaderContainer>
+        <HeaderBackground>
+            <HeaderContainer>
+                    <LeveBook to='/'>
+                        <HeaderLogo src={Logo}/>
+                        <NomeLoja>Leve Book</NomeLoja>
+                    </LeveBook>
+                    <HeaderMenu/>
+                    <FormPesquisa>
+                        <BarraDePesqisa type='search' placeholder='O que você está procurando?'/>
+                        <IconeLupa>
+                            <RiSearchLine/>
+                        </IconeLupa>
+                    </FormPesquisa>
+                    <NavBar>
+                    {itensNavHeader.map( item => (
+                        <HeaderLink to={item.pathname}>{item.icone}{item.nome}</HeaderLink>
+                    ))}
+                    </NavBar>
+            </HeaderContainer>
+        </HeaderBackground>
     )
 }
