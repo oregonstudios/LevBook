@@ -1,7 +1,10 @@
+import imagemLivro from '../images/LivroTeste.jpeg'
+
 class LivrosContent {
-    constructor(categoriaAtual, pathname) {
-        this.categoriaAtual = categoriaAtual;
-        this.links = ['Home', ...gerarListaLinks(pathname)];
+    constructor(categoriaAtual, pathname, livros) {
+        this.categoriaAtual = categoriaAtual
+        this.links = ['Home', ...gerarListaLinks(pathname)]
+        this.livros = livros
     }
 }
 
@@ -21,25 +24,88 @@ export const obterLivrosContent = (pathname) => {
     switch (pathname) {
 
         case '/livros/fantasia':
-            return new LivrosContent('Fantasia', pathname);
+            return new LivrosContent('Fantasia', pathname, new Array(10).fill({
+                imagem: imagemLivro,
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "47,21",
+                descricao: "descricao",
+                genero: "fantasia",
+                paginas:"paginas",
+                ano:"1954"
+            }));
 
         case '/livros/ficcao':
-            return new LivrosContent('Ficção', pathname);
+            return new LivrosContent('Ficção', pathname, new Array(10).fill({
+                imagem: imagemLivro,
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "47,21",
+                descricao: "descricao",
+                genero: "fantasia",
+                paginas:"paginas",
+                ano:"1954"
+            }));
 
         case '/livros/receitas':
-            return new LivrosContent('Receitas', pathname);
+            return new LivrosContent('Receitas', pathname, new Array(10).fill({
+                imagem: imagemLivro,
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "47,21",
+                descricao: "descricao",
+                genero: "fantasia",
+                paginas:"paginas",
+                ano:"1954"
+            }));
 
         case '/livros/religiao':
-            return new LivrosContent('Religião', pathname);
+            return new LivrosContent('Religião', pathname, new Array(10).fill({
+                imagem: imagemLivro,
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "47,21",
+                descricao: "descricao",
+                genero: "fantasia",
+                paginas:"paginas",
+                ano:"1954"
+            }));
 
         case '/livros/romances':
-            return new LivrosContent('Romances', pathname);
+            return new LivrosContent('Romances', pathname, new Array(10).fill({
+                imagem: imagemLivro,
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "47,21",
+                descricao: "descricao",
+                genero: "fantasia",
+                paginas:"paginas",
+                ano:"1954"
+            }));
 
         case '/livros/terror':
-            return new LivrosContent('Terror', pathname);
+            return new LivrosContent('Terror', pathname, new Array(10).fill({
+                imagem: imagemLivro,
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "47,21",
+                descricao: "descricao",
+                genero: "fantasia",
+                paginas:"paginas",
+                ano:"1954"
+            }));
         
         default:
-            return new LivrosContent('Livros', pathname);
+            return new LivrosContent('Livros', pathname, new Array(10).fill({
+                imagem: imagemLivro,
+                titulo: "O Senhor dos Anéis",
+                autor: "J.R.R. Tolkien",
+                preco: "47,21",
+                descricao: "descricao",
+                genero: "fantasia",
+                paginas:"paginas",
+                ano:"1954"
+            }));
     }
 };
 
