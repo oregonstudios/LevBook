@@ -58,8 +58,7 @@ const FilterListItem = styled.li`
 const ResultsList = styled.ul`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
-  width: 100%;
-  grid-column-gap: 0px;
+  grid-column-gap: 20px;
   grid-row-gap: 30px; 
   padding: 0 auto; 
 `
