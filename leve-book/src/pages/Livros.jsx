@@ -3,7 +3,7 @@ import Footer from "components/Footer"
 import HeaderSection from "components/HeaderSection"
 import styled from "styled-components"
 import { useLocation, Link } from "react-router-dom"
-import { obterLivrosContent } from "../scripts/livrosContent"
+import { obterLivrosContent } from "../scripts/LivrosContent"
 
 const LivrosBackground = styled.div`
   width: 100%;
@@ -130,7 +130,7 @@ export default function Livros(){
               <FilterBar>
                   <NavList>
                     {livrosContent.links.map( link => (
-                      <LinkItem>{link}> </LinkItem>
+                      <LinkItem>{link} </LinkItem>
                     ))}
                   </NavList>
                   <div>

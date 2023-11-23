@@ -174,12 +174,6 @@ export default function Header({setUserDisplayName}) {
                   {item.nome}
                 </HeaderLink>
               ))}
-              {isAuthenticated && (
-                <SairLink onClick={handleLogout}>
-                  <RiLogoutBoxLine size={22} />
-                  Sair
-                </SairLink>
-              )}
             </NavBar>
           </HeaderContainer>
         </HeaderBackground>
