@@ -8,7 +8,13 @@ import HeaderMenu from './HeaderMenu';
 // imagens
 import Logo from '../images/logo.png'
 // React Icons
-import {RiShoppingBasket2Line, RiHeartLine, RiUser3Line, RiSearchLine} from 'react-icons/ri'
+import {RiShoppingBasket2Line, RiHeartLine, RiUser3Line, RiSearchLine, RiLogoutBoxLine} from 'react-icons/ri'
+
+import { getAuth, signOut } from 'firebase/auth';
+import { useNavigate } from 'react-router-dom';
+import { firebaseApp } from 'firebaseConfig'
+
+
 
 const itensNavHeader = [
     {
@@ -101,29 +107,82 @@ const NavBar = styled.menu`
     display: flex;
     gap: 40px;
 `
+const SairLink = styled.div`
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  color: #FFF;
+  text-decoration: none;
+  gap: 5px;
+`;
 
+export default function Header({setUserDisplayName}) {
+    const userDisplayName = localStorage.getItem("@AuthFirebase:userDisplayName");
+    const auth = getAuth(firebaseApp);
+    const navigate = useNavigate();
 
-export default function Header(){
-    return(
+    const isAuthenticated = Boolean(userDisplayName);
+
+    // Crie uma cópia da matriz de itens e substitua o objeto "Entrar" pelo nome do usuário
+    const itensNavHeaderAtualizado = [...itensNavHeader];
+    const entrarIndex = itensNavHeaderAtualizado.findIndex(item => item.nome === "Entrar");
+  
+    if (entrarIndex !== -1 && userDisplayName) {
+      itensNavHeaderAtualizado[entrarIndex] = {
+
+        nome: `Olá, ${userDisplayName}`,
+        icone: <RiUser3Line size={22} />,
+        pathname: "/conta"
+      };
+    }
+  
+    const handleLogout = () => {
+        try {
+          // Limpe os itens no localStorage ou realize outras ações necessárias
+          localStorage.removeItem("@AuthFirebase:userDisplayName");
+          localStorage.removeItem("@AuthFirebase:token");
+          localStorage.removeItem("@AuthFirebase:user");
+      
+          // Desconecte o usuário
+          auth.signOut();
+      
+          // Redirecione para a página de login ou faça o que for apropriado para o seu aplicativo
+          navigate('/login');
+        } catch (error) {
+          console.error("Erro durante o logout:", error);
+        }
+      };
+      
+      return (
         <HeaderBackground>
-            <HeaderContainer>
-                    <LeveBook to='/'>
-                        <HeaderLogo src={Logo}/>
-                        <NomeLoja>Leve Book</NomeLoja>
-                    </LeveBook>
-                    <HeaderMenu/>
-                    <FormPesquisa>
-                        <BarraDePesqisa type='search' placeholder='O que você está procurando?'/>
-                        <IconeLupa>
-                            <RiSearchLine/>
-                        </IconeLupa>
-                    </FormPesquisa>
-                    <NavBar>
-                    {itensNavHeader.map( item => (
-                        <HeaderLink to={item.pathname}>{item.icone}{item.nome}</HeaderLink>
-                    ))}
-                    </NavBar>
-            </HeaderContainer>
+          <HeaderContainer>
+            <LeveBook to='/'>
+              <HeaderLogo src={Logo} />
+              <NomeLoja>Leve Book</NomeLoja>
+            </LeveBook>
+            <HeaderMenu />
+            <FormPesquisa>
+              <BarraDePesqisa type='search' placeholder='O que você está procurando?' />
+              <IconeLupa>
+                <RiSearchLine />
+              </IconeLupa>
+            </FormPesquisa>
+            <NavBar>
+              {itensNavHeaderAtualizado.map((item) => (
+                <HeaderLink key={item.pathname} to={item.pathname}>
+                  {item.icone}
+                  {item.nome}
+                </HeaderLink>
+              ))}
+              {isAuthenticated && (
+                <SairLink onClick={handleLogout}>
+                  <RiLogoutBoxLine size={22} />
+                  Sair
+                </SairLink>
+              )}
+            </NavBar>
+          </HeaderContainer>
         </HeaderBackground>
-    )
-}
+      );
+    }
+  

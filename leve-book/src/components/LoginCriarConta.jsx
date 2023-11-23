@@ -1,10 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import styled from "styled-components";
 import LoginInputLabel from "components/LoginInputLabel";
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
 import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, GoogleAuthProvider, createUserWithEmailAndPassword } from 'firebase/auth';
+import { getAuth, signInWithPopup, onAuthStateChanged, GoogleAuthProvider, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence  } from 'firebase/auth';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 
 // Estilos do título
@@ -125,20 +125,24 @@ export default function LoginCriarConta({ atualizarModo }) {
   const navigate = useNavigate();
   const [name, setName] = useState("");
 
-  // Função para lidar com o cadastro de usuário
-
-  /*function CriarUsuario() {
-    createUserWithEmailAndPassword(auth, email, password)
+  useEffect(() => {
+    // Configurar persistência de autenticação para 'session'
+    setPersistence(auth, browserSessionPersistence)
       .then(() => {
-        console.log("Conta criada com sucesso");
-        // Redirecione apenas se a criação de conta for bem-sucedida
-        navigate("/"); // Substitua pela rota desejada
+        // Observar mudanças no estado de autenticação
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          setUser(user);
+        });
+
+        // Cleanup da função do useEffect
+        return () => unsubscribe();
       })
       .catch((error) => {
-        console.error("Erro ao criar conta:", error);
+        console.error("Erro ao configurar a persistência de autenticação:", error);
       });
-  }*/
-
+  }, [auth]);
+  
+  // Função para lidar com o cadastro de usuário
   const handleRegister = async () => {
     try {
       const usersRef = collection(firestore, 'users');
@@ -156,6 +160,13 @@ export default function LoginCriarConta({ atualizarModo }) {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
   
+      const token = await user.getIdToken();
+
+          // Armazene informações no localStorage
+          localStorage.setItem("@AuthFirebase:token", token );
+          localStorage.setItem("@AuthFirebase:user", JSON.stringify(user));
+          localStorage.setItem("@AuthFirebase:userDisplayName", name);
+
       // Adicione dados ao Firestore
       const userRef = collection(firestore, 'users');
       const newUserDoc = {
@@ -188,6 +199,7 @@ export default function LoginCriarConta({ atualizarModo }) {
         console.log(error);
       });
   }
+  
 
   return (
     <>    
@@ -230,4 +242,6 @@ export default function LoginCriarConta({ atualizarModo }) {
     </div>
     </>
   );
+  
 }
+

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+
 import styled from "styled-components";
 import LoginInputLabel from "components/LoginInputLabel"; // Importa um componente personalizado
 
@@ -7,6 +8,7 @@ import { IoIosArrowBack } from 'react-icons/io'; // Importa o ícone de seta par
 import { useNavigate } from 'react-router-dom'; // Importa utilitários de roteamento
 import { initializeApp } from "firebase/app"; // Importa a função de inicialização do Firebase
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'; // Importa as funções de autenticação do Firebase
+import { onAuthStateChanged } from 'firebase/auth';
 
 
 const SetaVoltar = styled(IoIosArrowBack)`
@@ -100,8 +102,23 @@ const LoginEntrar = ({atualizarModo}) => {
     const [password, setPassword] = useState("");
     const [emailError, setEmailError] = useState("");
     const [passwordError, setPasswordError] = useState("");
-    const [user, setUser] = useState();
+    const [user, setUser] = useState(null);
 
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, (user) => {
+          setUser(user);
+        });
+      
+        return () => unsubscribe();
+      }, [auth]);
+
+      // Adicione essa verificação onde você deseja atualizar as informações do usuário
+useEffect(() => {
+    if (user) {
+      localStorage.setItem("user", JSON.stringify(user));
+    }
+  }, [user]);
+  
 
     useEffect(() => {
       // Carregar o usuário armazenado no localStorage quando o componente for montado
@@ -188,6 +205,7 @@ function login() {
                 console.error(error);
             });
     }
+
 
     return (
       <>
