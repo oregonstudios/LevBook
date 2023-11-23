@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import Header from "components/Header";
 import Footer from "components/Footer";
+import Carousel from 'react-bootstrap/Carousel';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
+
 
 // Images
 import mainbanner from "../images/home-banner.jpg";
@@ -24,11 +28,10 @@ const HeroSection = styled.div`
 `;
 
 const HeroIllustration = styled.img`
-  width: 90%;
+  max-width: 100%;
   display: flex;
-  margin-left: -21px;
   margin-top: 36.5px;
-  border-radius: 35px;
+  border-radius: 75px;
 `;
 
 const Btext = styled.div`
@@ -250,9 +253,36 @@ export default function Home() {
 
     <Body>
       <main>
-        <HeroSection>
-          <HeroIllustration src={mainbanner} alt="" />
-        </HeroSection>
+
+
+        <Carousel data-bs-theme="dark">
+      <Carousel.Item>
+        <HeroIllustration src={mainbanner}
+          className="d-block w-100"
+          alt="First slide"
+        />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <HeroIllustration src={mainbanner}
+          className="d-block w-100"
+          alt="Second slide"
+        />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+      <Carousel.Item>
+        <HeroIllustration src={mainbanner}
+          className="d-block w-100"
+          alt="Third slide"
+        />
+        <Carousel.Caption>
+        </Carousel.Caption>
+      </Carousel.Item>
+    </Carousel>
+
+
 
 
         
