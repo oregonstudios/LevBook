@@ -6,7 +6,7 @@ import Login from 'pages/Login';
 import Favoritos from 'pages/Favoritos'
 import Livros from 'pages/Livros';
 // Componentes
-import LivrosConfig from './routes/livrosConfig.json'
+import livrosConfig from './routes/livrosConfig.json'
 
 
 export default function App() {
@@ -20,7 +20,7 @@ export default function App() {
           <Route path='favoritos' element={<Favoritos />} />
           
           <Route path='livros' element={<Livros/>}>
-            {LivrosConfig.map( rota => (
+            {livrosConfig.map( rota => (
               <Route path={rota.path}  element={<Livros />} />
             ))}
           </Route>
