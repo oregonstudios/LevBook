@@ -3,7 +3,7 @@ import Footer from "components/Footer"
 import HeaderSection from "components/HeaderSection"
 import styled from "styled-components"
 import { useLocation, Link } from "react-router-dom"
-import { obterLivrosContent } from "../scripts/LivrosContent"
+import { obterLivrosContent } from "../scripts/livrosContent"
 
 const LivrosBackground = styled.div`
   width: 100%;
