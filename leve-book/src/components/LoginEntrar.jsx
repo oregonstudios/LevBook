@@ -6,9 +6,9 @@ import LoginInputLabel from "components/LoginInputLabel"; // Importa um componen
 import { FcGoogle } from 'react-icons/fc'; // Importa o ícone do Google
 import { IoIosArrowBack } from 'react-icons/io'; // Importa o ícone de seta para voltar
 import { useNavigate } from 'react-router-dom'; // Importa utilitários de roteamento
-import { initializeApp } from "firebase/app"; // Importa a função de inicialização do Firebase
 import { getAuth, signInWithPopup, GoogleAuthProvider, signInWithEmailAndPassword, sendPasswordResetEmail } from 'firebase/auth'; // Importa as funções de autenticação do Firebase
 import { onAuthStateChanged } from 'firebase/auth';
+import { auth } from "../services/firebaseConfig";
 
 
 const SetaVoltar = styled(IoIosArrowBack)`
@@ -81,7 +81,7 @@ const LinkRecuperarSenha = styled.a`
 `
 
 // Inicialização da configuração do Firebase
-const firebaseConfig = {
+/*const firebaseConfig = {
     apiKey: "AIzaSyCcv4PdY_YZH_wWjt3T7_lyRGhX3wrh6Z0",
     authDomain: "leve-book.firebaseapp.com",
     projectId: "leve-book",
@@ -91,7 +91,7 @@ const firebaseConfig = {
 };
 
 const firebaseApp = initializeApp(firebaseConfig);
-const auth = getAuth(firebaseApp);
+const auth = getAuth(firebaseApp);*/
 
 function handleLogin(event) {
   event.preventDefault();
@@ -105,6 +105,14 @@ const LoginEntrar = ({atualizarModo}) => {
     const [user, setUser] = useState(null);
 
     useEffect(() => {
+        const storedUser = localStorage.getItem("users");
+        if (storedUser) {
+          setUser(JSON.parse(storedUser));
+        }
+      }, []);
+
+
+    useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, (user) => {
           setUser(user);
         });
@@ -112,17 +120,26 @@ const LoginEntrar = ({atualizarModo}) => {
         return () => unsubscribe();
       }, [auth]);
 
+      // Adicione esta parte após o efeito de onAuthStateChanged
+useEffect(() => {
+    if (user) {
+      localStorage.setItem("users", JSON.stringify(user));
+    }
+  }, [user]);
+  
+
       // Adicione essa verificação onde você deseja atualizar as informações do usuário
 useEffect(() => {
     if (user) {
-      localStorage.setItem("user", JSON.stringify(user));
+      localStorage.setItem("users", JSON.stringify(user));
+      setUser(user);
     }
   }, [user]);
   
 
     useEffect(() => {
       // Carregar o usuário armazenado no localStorage quando o componente for montado
-      const storedUser = localStorage.getItem("user");
+      const storedUser = localStorage.getItem("users");
       if (storedUser) {
         setUser(JSON.parse(storedUser));
       }
@@ -166,7 +183,7 @@ function login() {
   signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
           const user = userCredential.user;
-          localStorage.setItem("user", JSON.stringify(user));
+          localStorage.setItem("users", JSON.stringify(user));
           console.log("Login bem-sucedido. Redirecionando para a página inicial.");
           navigate("/");
       })
@@ -198,7 +215,7 @@ function login() {
 
         signInWithPopup(auth, provider)
             .then((result) => {
-                localStorage.setItem("user", JSON.stringify(result.user));
+                localStorage.setItem("users", JSON.stringify(result.user));
                 navigate("/");
             })
             .catch((error) => {

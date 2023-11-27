@@ -3,9 +3,25 @@ import styled from "styled-components";
 import LoginInputLabel from "components/LoginInputLabel";
 import { FcGoogle } from 'react-icons/fc';
 import { useNavigate } from 'react-router-dom';
-import { initializeApp } from "firebase/app";
-import { getAuth, signInWithPopup, onAuthStateChanged, GoogleAuthProvider, createUserWithEmailAndPassword, setPersistence, browserSessionPersistence  } from 'firebase/auth';
+
+// Firebase Authentication
+import { 
+  getAuth, 
+  createUserWithEmailAndPassword, 
+  signInWithPopup, 
+  GoogleAuthProvider, 
+  setPersistence, 
+  browserSessionPersistence, 
+  onAuthStateChanged 
+} from 'firebase/auth';
+
+// Firebase Firestore
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
+
+// Firebase Config
+import { auth, firestore } from "../services/firebaseConfig";
+
+
 
 // Estilos do título
 const TituloCriarConta = styled.h1`
@@ -103,7 +119,7 @@ const LinkEntre = styled.a`
 
 
 // Configuração do Firebase
-const firebaseConfig = {
+/*const firebaseConfig = {
     apiKey: "AIzaSyCcv4PdY_YZH_wWjt3T7_lyRGhX3wrh6Z0",
     authDomain: "leve-book.firebaseapp.com",
     projectId: "leve-book",
@@ -115,7 +131,7 @@ const firebaseConfig = {
 // Inicialização do Firebase
 const firebaseApp = initializeApp(firebaseConfig);
 const auth = getAuth(firebaseApp);
-const firestore = getFirestore(firebaseApp);
+const firestore = getFirestore(firebaseApp);*/
 
 
 export default function LoginCriarConta({ atualizarModo }) {

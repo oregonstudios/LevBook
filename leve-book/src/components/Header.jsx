@@ -12,7 +12,8 @@ import {RiShoppingBasket2Line, RiHeartLine, RiUser3Line, RiSearchLine, RiLogoutB
 
 import { getAuth, signOut } from 'firebase/auth';
 import { useNavigate } from 'react-router-dom';
-import { firebaseApp } from 'firebaseConfig'
+import { auth, firebaseApp } from '../services/firebaseConfig';
+
 
 
 
