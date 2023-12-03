@@ -24,7 +24,7 @@ export const obterLivrosContent = (pathname) => {
     switch (pathname) {
 
         case '/livros/fantasia':
-            return new LivrosContent('Fantasia', pathname, new Array(20).fill(
+            return new LivrosContent('Fantasia', pathname, new Array(15).fill(
                 {
                 imagem: imagemLivro,
                 titulo: "O Senhor dos Anéis",
@@ -38,7 +38,7 @@ export const obterLivrosContent = (pathname) => {
             ));
 
         case '/livros/ficcao':
-            return new LivrosContent('Ficção', pathname, new Array(10).fill({
+            return new LivrosContent('Ficção', pathname, new Array(15).fill({
                 imagem: imagemLivro,
                 titulo: "O Senhor dos Anéis",
                 autor: "J.R.R. Tolkien",
@@ -50,7 +50,7 @@ export const obterLivrosContent = (pathname) => {
             }));
 
         case '/livros/receitas':
-            return new LivrosContent('Receitas', pathname, new Array(30).fill({
+            return new LivrosContent('Receitas', pathname, new Array(15).fill({
                 imagem: imagemLivro,
                 titulo: "O Senhor dos Anéis",
                 autor: "J.R.R. Tolkien",
@@ -62,7 +62,7 @@ export const obterLivrosContent = (pathname) => {
             }));
 
         case '/livros/religiao':
-            return new LivrosContent('Religião', pathname, new Array(40).fill({
+            return new LivrosContent('Religião', pathname, new Array(15).fill({
                 imagem: imagemLivro,
                 titulo: "O Senhor dos Anéis",
                 autor: "J.R.R. Tolkien",
@@ -74,7 +74,7 @@ export const obterLivrosContent = (pathname) => {
             }));
 
         case '/livros/romances':
-            return new LivrosContent('Romances', pathname, new Array(50).fill({
+            return new LivrosContent('Romances', pathname, new Array(15).fill({
                 imagem: imagemLivro,
                 titulo: "O Senhor dos Anéis",
                 autor: "J.R.R. Tolkien",
@@ -86,7 +86,7 @@ export const obterLivrosContent = (pathname) => {
             }));
 
         case '/livros/terror':
-            return new LivrosContent('Terror', pathname, new Array(60).fill({
+            return new LivrosContent('Terror', pathname, new Array(15).fill({
                 imagem: imagemLivro,
                 titulo: "O Senhor dos Anéis",
                 autor: "J.R.R. Tolkien",
@@ -98,7 +98,7 @@ export const obterLivrosContent = (pathname) => {
             }));
         
         default:
-            return new LivrosContent('Livros', pathname, new Array(10).fill({
+            return new LivrosContent('Livros', pathname, new Array(15).fill({
                 imagem: imagemLivro,
                 titulo: "O Senhor dos Anéis",
                 autor: "J.R.R. Tolkien",
