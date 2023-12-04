@@ -15,12 +15,7 @@ const db = getFirestore(app);
 
 async function obterLivrosPorColecao(colecao) {
   const todosLivros = {
-    fantasia: [],
-    terror: [],
-    receitas: [],  // Você precisa adaptar os nomes dos gêneros conforme as suas coleções
-    religiao: [],
-    romances: [],
-    ficcao: []
+    todos: []
   };
 
   for (const nomeColecao of colecao) {
@@ -29,15 +24,14 @@ async function obterLivrosPorColecao(colecao) {
     const livrosColecao = snapshot.docs.map((doc) => {
       const livroData = doc.data();
       const livroFormatado = {
-        imagem: "", // Certifique-se de definir a imagem correta aqui
+        
         ...livroData,
-        genero: nomeColecao.toLowerCase(),  // Adiciona o gênero
       };
 
       return livroFormatado;
     });
 
-    todosLivros[nomeColecao.toLowerCase()] = livrosColecao;
+    todosLivros.todos = todosLivros.todos.concat(livrosColecao);
   }
 
   return todosLivros;
@@ -48,13 +42,8 @@ async function main() {
   const colecoes = ['Fantasia', 'Terror', 'Receitas', 'Religião', 'Romances', 'Ficção'];
   const todosLivros = await obterLivrosPorColecao(colecoes);
 
-  // Agora você pode usar os arrays como desejar
-  console.log('Dados de Fantasia:', todosLivros.fantasia);
-  console.log('Dados de Terror:', todosLivros.terror);
-  console.log('Dados de Receitas:', todosLivros.receitas);
-  console.log('Dados de Religião:', todosLivros.religiao);
-  console.log('Dados de Romances:', todosLivros.romances);
-  console.log('Dados de Ficção:', todosLivros.ficcao);
+  // Agora você pode usar o array 'todos' como desejar
+  console.log('Todos os Livros:', todosLivros.todos);
 }
 
 main();
