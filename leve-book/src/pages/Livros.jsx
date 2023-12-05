@@ -4,6 +4,7 @@ import HeaderSection from "components/HeaderSection"
 import styled from "styled-components"
 import { useLocation, Link } from "react-router-dom"
 import { obterLivrosContent } from "../scripts/LivrosContent"
+import Logo from '../images/logo.png'
 
 const LivrosBackground = styled.div`
   width: 100%;
@@ -67,9 +68,11 @@ const ResultsItem = styled.li`
   height: 330px;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+  
   border-radius: 10px;
   box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
-  padding: 10px 0;
+  padding: 0 0 10px 0;
   box-sizing: border-box;
   transition: all 0.3s cubic-bezier(.25,.8,.25,1);
   background-color: #fff;
@@ -78,31 +81,52 @@ const ResultsItem = styled.li`
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
   }
 `
+const ResultsItemImagemWrapper = styled.div`
+  height: 67%;
+  display: flex;
+  justify-content: center;
+  background-color: #dfdfdf;
+  width: 100%;
+  border-bottom: 3px solid #a1a1a1;
+
+`
 const ResultsItemImagem = styled.img`
-  width: 65%;
+  height: 100%;
   align-self: center;
 `
-const ResultsItemDados = styled.section`
+const ResultsItemTituloWrapper = styled.section`
   display: flex;
   flex-direction: column;
   align-items: center;
-  border-top: 1px solid #b9b9b9;
-  padding: 14px 0 ;
-  gap: 5px;
-  
+  height: 11%;
+  text-align: center;
+  padding: auto 0;
+  overflow: hidden;
+  padding: 0 4px;
 `
 const ResultsItemTitulo = styled.p`
   font-size: 18px;
+`
+const ResultsItemAutorWrapper = styled.div`
+  height: 5%;
+  text-align: center;
+  overflow: hidden;
 `
 const ResultsItemAutor = styled.p`
   font-size: 14px;
   color: #696969;
 `
+const ResultsItemPrecoWrapper = styled.div`
+  height: 10%;
+  display: flex;
+  justify-content: center;
+`
 const ResultsItemPreco = styled.p`
   text-transform: uppercase;
   border: 1px solid var(--cor-primaria);
   border-radius: 3px;
-  height: 40px;
+  height: 100%;
+  width: 90%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,12 +181,24 @@ export default function Livros(){
 
               {livrosContent.livros.map( livro => (
                 <ResultsItem>
-                  <ResultsItemImagem src={livro.imagem}/>
-                  <ResultsItemDados>
-                    <ResultsItemTitulo>{livro.titulo}</ResultsItemTitulo>
-                    <ResultsItemAutor>{livro.autor}</ResultsItemAutor>
-                  </ResultsItemDados>
-                  <ResultsItemPreco>A partir de R$ {livro.preco}</ResultsItemPreco>
+                  <ResultsItemImagemWrapper>
+                    {livro.Url ? (
+                      <ResultsItemImagem src={livro.Url} alt="Descrição da imagem" />
+                    ) : (
+                      <ResultsItemImagem src={Logo} alt="Imagem Padrão" />
+                    )}
+                  </ResultsItemImagemWrapper>
+
+                  <ResultsItemTituloWrapper>
+                    <ResultsItemTitulo>{livro.Título}</ResultsItemTitulo>
+                  </ResultsItemTituloWrapper>
+                  <ResultsItemAutorWrapper>
+                    <ResultsItemAutor>{livro.Autor}</ResultsItemAutor>
+                  </ResultsItemAutorWrapper>
+                  
+                  <ResultsItemPrecoWrapper>
+                    <ResultsItemPreco>A partir de R$ {livro.Preço}</ResultsItemPreco>
+                  </ResultsItemPrecoWrapper>
                 </ResultsItem>
               ))}
               </ResultsList>

@@ -1,4 +1,5 @@
 import imagemLivro from '../images/LivroTeste.jpeg'
+import {livros} from '../services/puxarLivros.mjs'
 
 class LivrosContent {
     constructor(categoriaAtual, pathname, livros) {
@@ -24,90 +25,25 @@ export const obterLivrosContent = (pathname) => {
     switch (pathname) {
 
         case '/livros/fantasia':
-            return new LivrosContent('Fantasia', pathname, new Array(15).fill(
-                {
-                imagem: imagemLivro,
-                titulo: "O Senhor dos Anéis",
-                autor: "J.R.R. Tolkien",
-                preco: "47,21",
-                descricao: "descricao",
-                genero: "fantasia",
-                paginas:"paginas",
-                ano:"1954"
-            }
-            ));
+            return new LivrosContent('Fantasia', pathname, livros.filter(livro => livro.Gênero === 'Fantasia'));
 
         case '/livros/ficcao':
-            return new LivrosContent('Ficção', pathname, new Array(15).fill({
-                imagem: imagemLivro,
-                titulo: "O Senhor dos Anéis",
-                autor: "J.R.R. Tolkien",
-                preco: "47,21",
-                descricao: "descricao",
-                genero: "fantasia",
-                paginas:"paginas",
-                ano:"1954"
-            }));
+            return new LivrosContent('Ficção', pathname, livros.filter(livro => livro.Gênero === 'Ficção'));
 
         case '/livros/receitas':
-            return new LivrosContent('Receitas', pathname, new Array(15).fill({
-                imagem: imagemLivro,
-                titulo: "O Senhor dos Anéis",
-                autor: "J.R.R. Tolkien",
-                preco: "47,21",
-                descricao: "descricao",
-                genero: "fantasia",
-                paginas:"paginas",
-                ano:"1954"
-            }));
+            return new LivrosContent('Receitas', pathname, livros.filter(livro => livro.Gênero === 'Receitas'));
 
         case '/livros/religiao':
-            return new LivrosContent('Religião', pathname, new Array(15).fill({
-                imagem: imagemLivro,
-                titulo: "O Senhor dos Anéis",
-                autor: "J.R.R. Tolkien",
-                preco: "47,21",
-                descricao: "descricao",
-                genero: "fantasia",
-                paginas:"paginas",
-                ano:"1954"
-            }));
+            return new LivrosContent('Religião', pathname, livros.filter(livro => livro.Gênero === 'Religião'));
 
         case '/livros/romances':
-            return new LivrosContent('Romances', pathname, new Array(15).fill({
-                imagem: imagemLivro,
-                titulo: "O Senhor dos Anéis",
-                autor: "J.R.R. Tolkien",
-                preco: "47,21",
-                descricao: "descricao",
-                genero: "fantasia",
-                paginas:"paginas",
-                ano:"1954"
-            }));
+            return new LivrosContent('Romances', pathname, livros.filter(livro => livro.Gênero === 'Romance'));
 
         case '/livros/terror':
-            return new LivrosContent('Terror', pathname, new Array(15).fill({
-                imagem: imagemLivro,
-                titulo: "O Senhor dos Anéis",
-                autor: "J.R.R. Tolkien",
-                preco: "47,21",
-                descricao: "descricao",
-                genero: "fantasia",
-                paginas:"paginas",
-                ano:"1954"
-            }));
+            return new LivrosContent('Terror', pathname, livros.filter(livro => livro.Gênero === 'Terror'));
         
         default:
-            return new LivrosContent('Livros', pathname, new Array(15).fill({
-                imagem: imagemLivro,
-                titulo: "O Senhor dos Anéis",
-                autor: "J.R.R. Tolkien",
-                preco: "47,21",
-                descricao: "descricao",
-                genero: "fantasia",
-                paginas:"paginas",
-                ano:"1954"
-            }));
+            return new LivrosContent('Livros', pathname, livros);
     }
 };
 

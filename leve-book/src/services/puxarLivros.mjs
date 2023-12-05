@@ -42,8 +42,9 @@ async function main() {
   const colecoes = ['Fantasia', 'Terror', 'Receitas', 'Religião', 'Romances', 'Ficção'];
   const todosLivros = await obterLivrosPorColecao(colecoes);
 
-  // Agora você pode usar o array 'todos' como desejar
-  console.log('Todos os Livros:', todosLivros.todos);
 }
 
 main();
+
+const todosLivros = await obterLivrosPorColecao(['Fantasia', 'Terror', 'Receitas', 'Religião', 'Romances', 'Ficção']);
+export const livros = todosLivros.todos
