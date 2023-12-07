@@ -1,8 +1,8 @@
 [
-  {"categoria" : "fantasia" , "path": "fantasia"},
-  {"categoria" : "ficcao", "path": "ficcao"},
-  {"categoria" : "receitas" , "path": "receitas"},
-  {"categoria" : "religiao" , "path": "religiao"},
-  {"categoria" : "romances" , "path": "romances"},
-  {"categoria" : "terror" , "path": "terror"}
+  {"categoria" : "Fantasia" , "path": "fantasia"},
+  {"categoria" : "Ficção", "path": "ficcao"},
+  {"categoria" : "Receitas" , "path": "receitas"},
+  {"categoria" : "Religião" , "path": "religiao"},
+  {"categoria" : "Romances" , "path": "romances"},
+  {"categoria" : "Terror" , "path": "terror"}
 ]
