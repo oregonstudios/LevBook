@@ -37,7 +37,7 @@ export const obterLivrosContent = (pathname) => {
             return new LivrosContent('Religião', pathname, livros.filter(livro => livro.Gênero === 'Religião'));
 
         case '/livros/romances':
-            return new LivrosContent('Romances', pathname, livros.filter(livro => livro.Gênero === 'Romance'));
+            return new LivrosContent('Romances', pathname, livros.filter(livro => livro.Gênero === 'Romances'));
 
         case '/livros/terror':
             return new LivrosContent('Terror', pathname, livros.filter(livro => livro.Gênero === 'Terror'));

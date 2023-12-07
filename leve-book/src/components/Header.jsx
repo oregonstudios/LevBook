@@ -1,4 +1,5 @@
 // React Router
+import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { Link} from 'react-router-dom';
 
@@ -101,47 +102,49 @@ const SairLink = styled.div`
   gap: 5px;
 `;
 
-export default function Header({setUserDisplayName}) {
+export default function Header({ onSetUserDisplayName }) {
+  const [userDisplayName, setUserDisplayName] = useState(null);
 
-  const userDisplayName = localStorage.getItem("@AuthFirebase:userDisplayName");
+  useEffect(() => {
+    const storedUserDisplayName = localStorage.getItem('@AuthFirebase:userDisplayName');
+    setUserDisplayName(storedUserDisplayName);
+  }, []);
+
   const auth = getAuth(firebaseApp);
   const navigate = useNavigate();
   const isAuthenticated = Boolean(userDisplayName);
 
   const itensNavHeader = [
     {
-        nome: 'Favoritos',
-        icone: <RiHeartLine size={22}/>,
-        pathname: '/favoritos'
+      nome: 'Favoritos',
+      icone: <RiHeartLine size={22} />,
+      pathname: '/favoritos',
     },
     {
-        nome: isAuthenticated ? `Olá, ${userDisplayName}` : 'Entrar',
-        icone: <RiUser3Line size={22}/>,
-        pathname: isAuthenticated ? '/conta' : '/login'
+      nome: isAuthenticated ? `Olá, ${userDisplayName}` : 'Entrar',
+      icone: <RiUser3Line size={22} />,
+      pathname: isAuthenticated ? '/conta' : '/login',
     },
     {
-        nome: 'Minha Cesta',
-        icone: <RiShoppingBasket2Line size={22}/>,
-        pathname: '/cesta'
+      nome: 'Minha Cesta',
+      icone: <RiShoppingBasket2Line size={22} />,
+      pathname: '/cesta',
+    },
+  ];
+
+  const handleLogout = () => {
+    try {
+      localStorage.removeItem('@AuthFirebase:userDisplayName');
+      localStorage.removeItem('@AuthFirebase:token');
+      localStorage.removeItem('@AuthFirebase:user');
+
+      auth.signOut();
+
+      navigate('/login');
+    } catch (error) {
+      console.error('Erro durante o logout:', error);
     }
-  ]
-  
-    const handleLogout = () => {
-        try {
-          // Limpe os itens no localStorage ou realize outras ações necessárias
-          localStorage.removeItem("@AuthFirebase:userDisplayName");
-          localStorage.removeItem("@AuthFirebase:token");
-          localStorage.removeItem("@AuthFirebase:user");
-      
-          // Desconecte o usuário
-          auth.signOut();
-      
-          // Redirecione para a página de login ou faça o que for apropriado para o seu aplicativo
-          navigate('/login');
-        } catch (error) {
-          console.error("Erro durante o logout:", error);
-        }
-      };
+  };
       
       return (
         <HeaderBackground>
