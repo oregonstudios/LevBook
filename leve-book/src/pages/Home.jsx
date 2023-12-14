@@ -3,10 +3,17 @@ import Header from "components/Header";
 import HeaderSection from "components/HeaderSection";
 import Footer from "components/Footer";
 
+import React from 'react';
+import Slider from 'infinite-react-carousel';
+
 
 
 // Images
 import mainbanner from "../images/home-banner.jpg";
+import fourthbanner from "../images/home-banner4.jpg";
+import fifthbanner from "../images/home-banner5.jpg";
+import secondbanner from "../images/home-banner2.jpg";
+import thirdbanner from "../images/home-banner3.jpg";
 import silverswan from "../images/books/TheSilverSwan.jpg";
 import sequisermudaromundo from "../images/books/SeQuiserMudaroMundo.jpg";
 import vermelhobrancosangueazul from "../images/books/VermelhoBrancoeSangueAzul.jpg";
@@ -18,30 +25,27 @@ import ladykillers from "../images/books/LadyKillers.png";
 
 
 
-const HeroSection = styled.div`
-  flex-shrink: 0;
-  margin-top: 15px;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-`;
 
-const HeroIllustration = styled.img`
-  max-width: 100%;
-  display: flex;
-  margin-top: 36.5px;
-  border-radius: 75px;
-`;
 
-const Btext = styled.div`
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 48px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-top: 150px;
-`;
+const SimpleSlider = () => (
+    <Slider dots>
+      <div>
+        <img src={fifthbanner} alt="Banner 1" />
+      </div>
+      <div>
+      <img src={secondbanner} alt="Banner 2" />
+      </div>
+      <div>
+      <img src={fourthbanner} alt="Banner 1" />
+      </div>
+      <div>
+      <img src={mainbanner} alt="Banner 1" />
+      </div>
+      <div>
+      <img src={thirdbanner} alt="Banner 1" />
+      </div>
+    </Slider>
+  );
 
 
 const Body = styled.div`
@@ -51,90 +55,6 @@ justify-content: center;
 align-items: center;
 `;
 
-
-
-
-const Ltext = styled.div`
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 300;
-  line-height: normal;
-  margin-top: 20px;
-`;
-
-const Offers = styled.div`
-  cursor: pointer;
-  color: #FFF;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  width: 118px;
-  height: 38px;
-  flex-shrink: 0;
-  background-color: #F78310;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border-radius: 7px;
-  margin-top: 40px;
-`;
-
-const HeroOptions = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-`;
-
-const ProfileEdit = styled.div`
-  width: 351px;
-  height: 129px;
-  flex-shrink: 0;
-  border-radius: 23px;
-  background: #FBF8F5;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-  display: flex;
-  justify-content: left;
-  align-items: center;
-  margin: 20px;
-  cursor: pointer;
-`;
-
-const BoxOptions = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-left: 15px;
-`;
-
-const BigOptions = styled.div`
-  color: #000;
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: normal;
-`;
-
-const SmallOptions = styled.div`
-  color: rgba(0, 0, 0, 0.75);
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: normal;
-  margin-top: 10px;
-`;
-
-const LibraryIcon = styled.div`
-  width: 150px;
-  height: 150px;
-  margin-top: -15px;
-  margin-right: -30px;
-`;
 
 
 
@@ -153,7 +73,6 @@ const Products = styled.div`
 
 
 
-
 const BooksOptions = styled.div`
     display: flex;
     flex-direction: row;
@@ -169,20 +88,10 @@ const BooksOptions = styled.div`
 const Book = styled.img`
   width: 100%;
   border-radius: 10px;
+  margin-bottom: .5vw;
 `;
 
 
-
-
-const BookName = styled.div`
-    color: #000;
-    font-family: Montserrat;
-    font-size: 12px;
-    font-style: normal;
-    font-weight: 500;
-    line-height: normal;
-    margin-left: 20px;
-`;
 
 
 
@@ -192,6 +101,8 @@ const Options = styled.div`
   align-items: center;
   width: 150px; /* Ajuste a largura conforme necessário */
   margin: 5vw;
+  background-color: white;
+
 `;
 
 
@@ -230,13 +141,48 @@ const ProductsSubTitle = styled.div`
     white-space: nowrap;
 `;
 
-
-const OptionsCarousel = styled.div `
-        display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: row;
+const BookTitle = styled.div `
+         color: #000000;
+    font-family: Montserrat;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    white-space: nowrap;
 `
+
+
+
+
+const BookSub = styled.div `
+             color: #000000a0;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    white-space: nowrap;
+`
+
+
+const BookPrice = styled.div `
+             color: #000000a0;
+    font-family: Montserrat;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    white-space: nowrap;
+    border: 1px solid;
+    padding: .5vw;
+`
+
+
+
+
+
+
+
 
 
 
@@ -253,30 +199,49 @@ export default function Home() {
     <Body>
       <main>
 
+        <SimpleSlider></SimpleSlider>
+
         <Products>
                 <ProductsTitle>Veja  nossas ofertas</ProductsTitle>
                 <ProductsSubTitle>Não deixe a história acabar. Busque por sua próxima aventura...</ProductsSubTitle>
-                
+
+
+
 
                 <BooksOptions>
                     < Options>
                         <Book src={silverswan} />
+                        <BookTitle>SILVER SWAN</BookTitle>
+                        <BookSub>Amo Jones</BookSub>
+                        <BookPrice> APARTIR DE R$ 40.69</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={sequisermudaromundo} />
+                        <BookTitle>SE QUISER MUDAR O MU...</BookTitle>
+                        <BookSub>Sabrina Fernandes</BookSub>
+                        <BookPrice> APARTIR DE R$ 25.99</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={vermelhobrancosangueazul}/>
+                        <BookTitle>VERMELHO, BRANCO E S...</BookTitle>
+                        <BookSub>Casey McQuiston</BookSub>
+                        <BookPrice> APARTIR DE R$ 37.19</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={lupin} alt=""/>
+                        <BookTitle>ARSENE LUPIN: O LA...</BookTitle>
+                        <BookSub>Maurice Leblanc</BookSub>
+                        <BookPrice> APARTIR DE R$ 23.23</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={ladykillers}/>
+                        <BookTitle>LADY KILLERS</BookTitle>
+                        <BookSub>Tori Telfer</BookSub>
+                        <BookPrice> APARTIR DE R$ 79.90</BookPrice>
                     </Options>
 
                 </BooksOptions>                
@@ -288,29 +253,45 @@ export default function Home() {
                 <ProductsSubTitle>Criamos uma biblioteca só sua, com base em seus interesses</ProductsSubTitle>
                 
 
-                <BooksOptions>
 
+                
+                <BooksOptions>
                     < Options>
-                        <Book src={silverswan}/>
+                        <Book src={silverswan} />
+                        <BookTitle>SILVER SWAN</BookTitle>
+                        <BookSub>Amo Jones</BookSub>
+                        <BookPrice> APARTIR DE R$ 40.69</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={sequisermudaromundo} />
+                        <BookTitle>SE QUISER MUDAR O MU...</BookTitle>
+                        <BookSub>Sabrina Fernandes</BookSub>
+                        <BookPrice> APARTIR DE R$ 25.99</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={vermelhobrancosangueazul}/>
+                        <BookTitle>VERMELHO, BRANCO E S...</BookTitle>
+                        <BookSub>Casey McQuiston</BookSub>
+                        <BookPrice> APARTIR DE R$ 37.19</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={lupin} alt=""/>
+                        <BookTitle>ARSENE LUPIN: O LA...</BookTitle>
+                        <BookSub>Maurice Leblanc</BookSub>
+                        <BookPrice> APARTIR DE R$ 23.23</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={ladykillers}/>
+                        <BookTitle>LADY KILLERS</BookTitle>
+                        <BookSub>Tori Telfer</BookSub>
+                        <BookPrice> APARTIR DE R$ 79.90</BookPrice>
                     </Options>
 
-                </BooksOptions>                
+                </BooksOptions>   
             </Products>
 
 
@@ -319,29 +300,44 @@ export default function Home() {
                 <ProductsSubTitle>O halloween já passou, mas ainda da tempo de ver os bestsellers do medo</ProductsSubTitle>
                 
 
+                
                 <BooksOptions>
-
                     < Options>
                         <Book src={silverswan} />
+                        <BookTitle>SILVER SWAN</BookTitle>
+                        <BookSub>Amo Jones</BookSub>
+                        <BookPrice> APARTIR DE R$ 40.69</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={sequisermudaromundo} />
+                        <BookTitle>SE QUISER MUDAR O MU...</BookTitle>
+                        <BookSub>Sabrina Fernandes</BookSub>
+                        <BookPrice> APARTIR DE R$ 25.99</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={vermelhobrancosangueazul}/>
+                        <BookTitle>VERMELHO, BRANCO E S...</BookTitle>
+                        <BookSub>Casey McQuiston</BookSub>
+                        <BookPrice> APARTIR DE R$ 37.19</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={lupin} alt=""/>
+                        <BookTitle>ARSENE LUPIN: O LA...</BookTitle>
+                        <BookSub>Maurice Leblanc</BookSub>
+                        <BookPrice> APARTIR DE R$ 23.23</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={ladykillers}/>
+                        <BookTitle>LADY KILLERS</BookTitle>
+                        <BookSub>Tori Telfer</BookSub>
+                        <BookPrice> APARTIR DE R$ 79.90</BookPrice>
                     </Options>
 
-                </BooksOptions>                
+                </BooksOptions>        
             </Products>
 
 
@@ -350,29 +346,44 @@ export default function Home() {
                 <ProductsSubTitle>Obras com as melhores avaliações em nosso site</ProductsSubTitle>
                 
 
+                
                 <BooksOptions>
-
                     < Options>
                         <Book src={silverswan} />
+                        <BookTitle>SILVER SWAN</BookTitle>
+                        <BookSub>Amo Jones</BookSub>
+                        <BookPrice> APARTIR DE R$ 40.69</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={sequisermudaromundo} />
+                        <BookTitle>SE QUISER MUDAR O MU...</BookTitle>
+                        <BookSub>Sabrina Fernandes</BookSub>
+                        <BookPrice> APARTIR DE R$ 25.99</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={vermelhobrancosangueazul}/>
+                        <BookTitle>VERMELHO, BRANCO E S...</BookTitle>
+                        <BookSub>Casey McQuiston</BookSub>
+                        <BookPrice> APARTIR DE R$ 37.19</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={lupin} alt=""/>
+                        <BookTitle>ARSENE LUPIN: O LA...</BookTitle>
+                        <BookSub>Maurice Leblanc</BookSub>
+                        <BookPrice> APARTIR DE R$ 23.23</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={ladykillers}/>
+                        <BookTitle>LADY KILLERS</BookTitle>
+                        <BookSub>Tori Telfer</BookSub>
+                        <BookPrice> APARTIR DE R$ 79.90</BookPrice>
                     </Options>
 
-                </BooksOptions>                
+                </BooksOptions>          
             </Products>
 
 
@@ -381,29 +392,44 @@ export default function Home() {
                 <ProductsSubTitle>Não deixe a história acabar. Busque por sua próxima aventura...</ProductsSubTitle>
                 
 
+                
                 <BooksOptions>
-
                     < Options>
                         <Book src={silverswan} />
+                        <BookTitle>SILVER SWAN</BookTitle>
+                        <BookSub>Amo Jones</BookSub>
+                        <BookPrice> APARTIR DE R$ 40.69</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={sequisermudaromundo} />
+                        <BookTitle>SE QUISER MUDAR O MU...</BookTitle>
+                        <BookSub>Sabrina Fernandes</BookSub>
+                        <BookPrice> APARTIR DE R$ 25.99</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={vermelhobrancosangueazul}/>
+                        <BookTitle>VERMELHO, BRANCO E S...</BookTitle>
+                        <BookSub>Casey McQuiston</BookSub>
+                        <BookPrice> APARTIR DE R$ 37.19</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={lupin} alt=""/>
+                        <BookTitle>ARSENE LUPIN: O LA...</BookTitle>
+                        <BookSub>Maurice Leblanc</BookSub>
+                        <BookPrice> APARTIR DE R$ 23.23</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={ladykillers}/>
+                        <BookTitle>LADY KILLERS</BookTitle>
+                        <BookSub>Tori Telfer</BookSub>
+                        <BookPrice> APARTIR DE R$ 79.90</BookPrice>
                     </Options>
 
-                </BooksOptions>                
+                </BooksOptions>    
             </Products>
 
 
@@ -412,29 +438,44 @@ export default function Home() {
                 <ProductsSubTitle>Não deixe a história acabar. Busque por sua próxima aventura...</ProductsSubTitle>
                 
 
+                
                 <BooksOptions>
-
                     < Options>
                         <Book src={silverswan} />
+                        <BookTitle>SILVER SWAN</BookTitle>
+                        <BookSub>Amo Jones</BookSub>
+                        <BookPrice> APARTIR DE R$ 40.69</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={sequisermudaromundo} />
+                        <BookTitle>SE QUISER MUDAR O MU...</BookTitle>
+                        <BookSub>Sabrina Fernandes</BookSub>
+                        <BookPrice> APARTIR DE R$ 25.99</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={vermelhobrancosangueazul}/>
+                        <BookTitle>VERMELHO, BRANCO E S...</BookTitle>
+                        <BookSub>Casey McQuiston</BookSub>
+                        <BookPrice> APARTIR DE R$ 37.19</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={lupin} alt=""/>
+                        <BookTitle>ARSENE LUPIN: O LA...</BookTitle>
+                        <BookSub>Maurice Leblanc</BookSub>
+                        <BookPrice> APARTIR DE R$ 23.23</BookPrice>
                     </Options>
 
                     <Options>
                         <Book src={ladykillers}/>
+                        <BookTitle>LADY KILLERS</BookTitle>
+                        <BookSub>Tori Telfer</BookSub>
+                        <BookPrice> APARTIR DE R$ 79.90</BookPrice>
                     </Options>
 
-                </BooksOptions>                
+                </BooksOptions>             
             </Products>
 
 

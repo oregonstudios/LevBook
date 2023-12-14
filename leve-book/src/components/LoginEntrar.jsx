@@ -185,7 +185,7 @@ function login() {
           const user = userCredential.user;
           localStorage.setItem("users", JSON.stringify(user));
           console.log("Login bem-sucedido. Redirecionando para a página inicial.");
-          navigate("/");
+          navigate("/Popup");
       })
       .catch((error) => {
           console.error('Erro ao fazer login:', error);

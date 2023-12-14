@@ -190,7 +190,7 @@ export default function LoginCriarConta({ atualizarModo }) {
         email: user.email,
       };
       const docRef = await addDoc(userRef, newUserDoc);
-      navigate("/")
+      navigate("/Popup")
   
     } catch (error) {
       console.error(error);
