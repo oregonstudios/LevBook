@@ -181,15 +181,19 @@ function login() {
   }
 
   signInWithEmailAndPassword(auth, email, password)
-      .then((userCredential) => {
-          const user = userCredential.user;
-          localStorage.setItem("users", JSON.stringify(user));
-          console.log("Login bem-sucedido. Redirecionando para a página inicial.");
-          navigate("/Popup");
-      })
-      .catch((error) => {
-          console.error('Erro ao fazer login:', error);
-      });
+    .then((userCredential) => {
+        const user = userCredential.user;
+        
+        // Adiciona o nome de exibição do usuário ao localStorage
+        localStorage.setItem("@AuthFirebase:userDisplayName", user.displayName);
+
+        localStorage.setItem("users", JSON.stringify(user));
+        console.log("Login bem-sucedido. Redirecionando para a página inicial.");
+        navigate("/");
+    })
+    .catch((error) => {
+        console.error('Erro ao fazer login:', error);
+    });
 }
 
   // Função para recuperar a senha
